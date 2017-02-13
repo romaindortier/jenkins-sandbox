@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+### Webserver Container ###########################
+    webserver:
+        container_name: webserver
+        build:
+            context: ./
+            dockerfile: Dockerfile-nginx
