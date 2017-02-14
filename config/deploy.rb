@@ -142,4 +142,15 @@ namespace :deploy do
           end
       end
   end
+
+
+    desc 'Install dependencies'
+    task :composer_run do
+        on roles(:app) do
+            within release_path do
+                execute :docker , :exec, "-u", "www-data", "-i", "workspace", "composer", "install"
+            end
+        end
+    end
+
 end
