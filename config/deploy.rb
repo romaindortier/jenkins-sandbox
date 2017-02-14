@@ -1,13 +1,11 @@
 # config valid only for current version of Capistrano
-lock '3.5.0'
+# lock '3.7'
 
 namespace :deploy do
   task :dockerbuild do
         on release_roles :all do
-      image_name = fetch(:image_name)
-      account = fetch(:account)
-
       puts "============= Starting Docker Update ============="
+      # execute echo $(docker ps -a -q)
       # execute "docker stop $(docker ps -a -q)"
       # execute "docker rm $(docker ps -a -q)"
     end
@@ -16,8 +14,7 @@ namespace :deploy do
         on release_roles :all do
             within release_path do
                 execute :'pwd'
-                execute :'echo', :release_path
-                execute :'docker-compose', :build
+                execute :'docker-compose', :build, 'webserver'
             end
         end
   end
