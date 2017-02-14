@@ -8,11 +8,11 @@ services:
         container_name: applications
         image: tianon/true
         volumes:
-            - ../../current/app:/var/www
-            - ../mongo:/data/db
-            - ../redis:/data
-            - ../mysql:/var/lib/mysql
-            - ../conf/varnish:/etc/varnish
+            - ./app:/var/www
+            - ./mongo:/data/db
+            - ./redis:/data
+            - ./mysql:/var/lib/mysql
+            - ./conf/varnish:/etc/varnish
 
 ### Workspace Utilities Container ###########################
 
@@ -20,6 +20,7 @@ services:
         container_name: workspace
         build:
             context: ./dockerised/workspace
+            args:
                 - INSTALL_MONGO=true
                 - INSTALL_XDEBUG=true
                 - INSTALL_NODE=false
