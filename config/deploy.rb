@@ -13,7 +13,6 @@ namespace :deploy do
   task :dockerbuild do
         on release_roles :all do
             within release_path do
-                execute :'pwd'
                 execute :'docker-compose', :build, 'webserver'
             end
         end
@@ -23,7 +22,7 @@ namespace :deploy do
   task :dockerup do
       on release_roles :all do
           within release_path do
-              execute :'docker-compose', :up, "-d"
+              execute :'docker-compose', :up, "--build", "-d"
           end
       end
   end

@@ -12,6 +12,7 @@ services:
             - ../mongo:/data/db
             - ../redis:/data
             - ../mysql:/var/lib/mysql
+            - ../conf/varnish:/etc/varnish
 
 ### Workspace Utilities Container ###########################
 
@@ -137,7 +138,7 @@ services:
         container_name: varnish
         image: wodby/drupal-varnish:1.0.0
         volumes:
-            - ./conf/varnish:/etc/varnish
+            - ../conf/varnish:/etc/varnish
         depends_on:
             - nginx
         environment:
