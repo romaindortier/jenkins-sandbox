@@ -8,12 +8,12 @@ services:
         container_name: applications
         image: tianon/true
         volumes:
-            - ../../current/app:/var/www
-            - ../../current/mongo:/data/db
-            - ../../current/redis:/data
-            - ../../current/mysql:/var/lib/mysql
-            - ../../current/conf/varnish:/etc/varnish
-            - ../../current/jenkins_home:/var/lib/jenkins
+            - ../app:/var/www
+            - ./mongo:/data/db
+            - ./redis:/data
+            - ./mysql:/var/lib/mysql
+            - ./conf/varnish:/etc/varnish
+            - ./jenkins_home:/var/lib/jenkins
 
 ### Workspace Utilities Container ###########################
 
@@ -96,7 +96,7 @@ services:
         container_name: jenkins
         restart: always
         volumes:
-            - ../../current/jenkins_home:/var/lib/jenkins
+            - ./jenkins_home:/var/lib/jenkins
         ports:
           - 8076:8080
         tty: true
@@ -125,7 +125,7 @@ services:
         container_name: varnish
         image: wodby/drupal-varnish:1.0.0
         volumes:
-            - ../../current/conf/varnish:/etc/varnish
+            - ./conf/varnish:/etc/varnish
         depends_on:
             - nginx
         environment:
@@ -151,7 +151,7 @@ services:
                 - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
         volumes:
-            - ../../current/mysql:/var/lib/mysql
+            - ./mysql:/var/lib/mysql
         ports:
             - "3306:3306"
 
@@ -163,7 +163,7 @@ services:
         ports:
             - "27017:27017"
         volumes:
-            - ../../current/mongo:/data/db
+            - ./mongo:/data/db
 
 ### Redis Container #########################################
 
