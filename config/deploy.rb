@@ -4,10 +4,9 @@
 namespace :deploy do
   task :dockerstop do
         on release_roles :all do
-      puts "============= Starting Docker Update ============="
-      # puts $(docker ps -a -q)
-      execute: 'docker', :stop, 'webserver'
-      # execute "docker rm $(docker ps -a -q)"
+          puts "============= Starting Docker Update ============="
+          execute :'docker', :stop, 'webserver'
+          execute :'docker', :rm, 'webserver'
     end
   end
 
