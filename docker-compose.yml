@@ -8,12 +8,12 @@ services:
         container_name: applications
         image: tianon/true
         volumes:
-            - ../app:/var/www
-            - ../mongo:/data/db
-            - ../redis:/data
-            - ../mysql:/var/lib/mysql
-            - ../conf/varnish:/etc/varnish
-            - ../jenkins_home:/var/lib/jenkins
+            - ./app:/var/www
+            - ./mongo:/data/db
+            - ./redis:/data
+            - ./mysql:/var/lib/mysql
+            - ./conf/varnish:/etc/varnish
+            - ./jenkins_home:/var/lib/jenkins
 
 ### Workspace Utilities Container ###########################
 
@@ -96,7 +96,7 @@ services:
         container_name: jenkins
         restart: always
         volumes:
-            - ../jenkins_home:/var/lib/jenkins
+            - ./jenkins_home:/var/lib/jenkins
         ports:
           - 8076:8080
         tty: true
@@ -111,8 +111,8 @@ services:
         volumes_from:
             - applications
         volumes:
-            - ../logs/nginx/:/var/log/nginx
-            - ../nginx/sites/:/etc/nginx/sites-available
+            - ./dockerised/logs/nginx/:/var/log/nginx
+            - ./dockerised/nginx/sites/:/etc/nginx/sites-available
         ports:
             - "80:80"
             - "443:443"
@@ -125,7 +125,7 @@ services:
         container_name: varnish
         image: wodby/drupal-varnish:1.0.0
         volumes:
-            - ./conf/varnish:/etc/varnish
+            - ./dockerised/conf/varnish:/etc/varnish
         depends_on:
             - nginx
         environment:
@@ -144,14 +144,14 @@ services:
     mysql:
         container_name: mysql
         build:
-            context: ./dockerised/mysql
+            context: ./mysql
             args:
                 - MYSQL_DATABASE=homestead
                 - MYSQL_USER=homestead
                 - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
         volumes:
-            - ../mysql:/var/lib/mysql
+            - ./mysql:/var/lib/mysql
         ports:
             - "3306:3306"
 
@@ -163,7 +163,7 @@ services:
         ports:
             - "27017:27017"
         volumes:
-            - ../mongo:/data/db
+            - ./mongo:/data/db
 
 ### Redis Container #########################################
 
@@ -171,7 +171,7 @@ services:
         container_name: redis
         build: ./dockerised/redis
         volumes:
-            - ../redis:/data
+            - ./redis:/data
         ports:
             - "6379:6379"
 
