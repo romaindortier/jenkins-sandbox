@@ -144,7 +144,7 @@ services:
     mysql:
         container_name: mysql
         build:
-            context: ./mysql
+            context: ./dockerised/mysql
             args:
                 - MYSQL_DATABASE=homestead
                 - MYSQL_USER=homestead
