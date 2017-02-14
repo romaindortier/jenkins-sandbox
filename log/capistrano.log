@@ -30683,3 +30683,1325 @@ See 'docker stop --help'.
   INFO [b73f14e4] Running /usr/bin/env echo "Branch master (at 4de5be9f805b13db0e7c430fe59bb0f3ee0dca24) deployed as release 20170214190445 by romain" >> /home/revisions.log as root@46.101.23.88
  DEBUG [b73f14e4] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 4de5be9f805b13db0e7c430fe59bb0f3ee0dca24) deployed as release 20170214190445 by romain" >> /home/revisions.log
   INFO [b73f14e4] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:11:51 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0e758723] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [0e758723] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0e758723] Finished in 22.410 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [60c9de3f] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [60c9de3f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [60c9de3f] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [36872b53] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [36872b53] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [36872b53] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e	HEAD
+  INFO [36872b53] Finished in 3.603 seconds with exit status 0 (successful).
+  INFO [f4226f3f] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [f4226f3f] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [f4226f3f] Finished in 0.166 seconds with exit status 0 (successful).
+ DEBUG [4ffe26c6] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [4ffe26c6] Command: [ -f /home/current/REVISION ]
+ DEBUG [4ffe26c6] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [f349e3d8] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [f349e3d8] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [f349e3d8] 	4de5be9f805b13db0e7c430fe59bb0f3ee0dca24
+ DEBUG [f349e3d8] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [4f846e9b] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [4f846e9b] Command: [ -f /home/repo/HEAD ]
+ DEBUG [4f846e9b] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [fb5c1f32] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [fb5c1f32] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [fb5c1f32] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [47e52bc4] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [47e52bc4] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [47e52bc4] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [d66dff5e] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [d66dff5e] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d66dff5e] 	Fetching origin
+ DEBUG [d66dff5e] 	From github.com:romaindortier/jenkins-sandbox
+   4de5be9..bf463b4  master     -> master
+  INFO [d66dff5e] Finished in 1.727 seconds with exit status 0 (successful).
+ DEBUG [b5736177] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b5736177] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [b5736177] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [7c7a0e59] Running /usr/bin/env mkdir -p /home/releases/20170214191220 as root@46.101.23.88
+ DEBUG [7c7a0e59] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214191220 )
+  INFO [7c7a0e59] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [775f731d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214191220 as root@46.101.23.88
+ DEBUG [775f731d] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214191220 )
+  INFO [775f731d] Finished in 1.231 seconds with exit status 0 (successful).
+ DEBUG [c43241a0] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [c43241a0] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [c43241a0] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [a238a4cf] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [a238a4cf] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a238a4cf] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e
+ DEBUG [a238a4cf] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [cdef0c98] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [cdef0c98] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [cdef0c98] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [e7e3c56d] Running /usr/bin/env echo "bf463b4d619e6d44526d4d0198d5cf5aafbedd5e" >> REVISION as root@46.101.23.88
+ DEBUG [e7e3c56d] Command: cd /home/releases/20170214191220 && /usr/bin/env echo "bf463b4d619e6d44526d4d0198d5cf5aafbedd5e" >> REVISION
+  INFO [e7e3c56d] Finished in 0.121 seconds with exit status 0 (successful).
+ DEBUG [8905023c] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [8905023c] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [8905023c] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [c7c37124] Running /usr/bin/env docker stop workspace as root@46.101.23.88
+ DEBUG [c7c37124] Command: cd /home/releases/20170214191220 && /usr/bin/env docker stop workspace
+ DEBUG [c7c37124] 	workspace
+  INFO [c7c37124] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [3031b07f] Running /usr/bin/env docker rm workspace as root@46.101.23.88
+ DEBUG [3031b07f] Command: cd /home/releases/20170214191220 && /usr/bin/env docker rm workspace
+ DEBUG [3031b07f] 	workspace
+  INFO [3031b07f] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [af1d5ba4] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [af1d5ba4] Command: cd /home/releases/20170214191220 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [af1d5ba4] 	Creating network "20170214191220_default" with the default driver
+ DEBUG [af1d5ba4] 	Building workspace
+ DEBUG [af1d5ba4] 	Step 1 : FROM laradock/workspace:1.3
+ DEBUG [af1d5ba4] 	 ---> 4973a22e69b6
+ DEBUG [af1d5ba4] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 4f464f9e5967
+ DEBUG [af1d5ba4] 	Step 3 : ARG PUID=1000
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> c7e386d7105b
+ DEBUG [af1d5ba4] 	Step 4 : ARG PGID=1000
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 93ab1bb060f4
+ DEBUG [af1d5ba4] 	Step 5 : RUN groupadd -g $PGID laradock &&     useradd -u $PUID -g laradock -m laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 2e260a028a3f
+ DEBUG [af1d5ba4] 	Step 6 : ARG TZ=UTC
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> fc71d9ac5e6a
+ DEBUG [af1d5ba4] 	Step 7 : ENV TZ ${TZ}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 306b835d6f4e
+ DEBUG [af1d5ba4] 	Step 8 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> f9147e16972d
+ DEBUG [af1d5ba4] 	Step 9 : COPY ./composer.json /home/laradock/.composer/composer.json
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> c7ba7430cec8
+ DEBUG [af1d5ba4] 	Step 10 : RUN chown -R laradock:laradock /home/laradock/.composer
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 28c2e53fb0b0
+ DEBUG [af1d5ba4] 	Step 11 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 462b48dc22ad
+ DEBUG [af1d5ba4] 	Step 12 : ARG COMPOSER_GLOBAL_INSTALL=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> b93252a8f0f3
+ DEBUG [af1d5ba4] 	Step 13 : ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 04e105f14ea2
+ DEBUG [af1d5ba4] 	Step 14 : RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then     composer global install ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0bcc7e84197a
+ DEBUG [af1d5ba4] 	Step 15 : RUN echo "" >> ~/.bashrc && echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 3fc04ed7736f
+ DEBUG [af1d5ba4] 	Step 16 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> efd219c64951
+ DEBUG [af1d5ba4] 	Step 17 : COPY ./crontab /etc/cron.d
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 3c7f0a3d009f
+ DEBUG [af1d5ba4] 	Step 18 : RUN chmod -R 644 /etc/cron.d
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 41168a54e8c1
+ DEBUG [af1d5ba4] 	Step 19 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> c3ea3adb45b7
+ DEBUG [af1d5ba4] 	Step 20 : COPY ./aliases.sh /home/laradock/aliases.sh
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> c47dda318e7a
+ DEBUG [af1d5ba4] 	Step 21 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 4a7932fd1a19
+ DEBUG [af1d5ba4] 	Step 22 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 1f3e47a7be8c
+ DEBUG [af1d5ba4] 	Step 23 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 1f9ecf4bb7fd
+ DEBUG [af1d5ba4] 	Step 24 : ARG INSTALL_XDEBUG=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> dcbfc6c450f8
+ DEBUG [af1d5ba4] 	Step 25 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     apt-get update &&     apt-get install -y --force-yes php7.0-xdebug &&     sed -i 's/^/;/g' /etc/php/7.0/cli/conf.d/20-xdebug.ini &&     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> fa7fc8454bbc
+ DEBUG [af1d5ba4] 	Step 26 : COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 000dd0e656ed
+ DEBUG [af1d5ba4] 	Step 27 : ARG INSTALL_WORKSPACE_SSH=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 9fd440e475ce
+ DEBUG [af1d5ba4] 	Step 28 : ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 951bb166c0b1
+ DEBUG [af1d5ba4] 	Step 29 : ADD insecure_id_rsa /tmp/id_rsa
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 3c1548c75321
+ DEBUG [af1d5ba4] 	Step 30 : ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 18ee1261c16c
+ DEBUG [af1d5ba4] 	Step 31 : RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then     rm -f /etc/service/sshd/down &&     cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys         && cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub         && cat /tmp/id_rsa >> /root/.ssh/id_rsa         && rm -f /tmp/id_rsa*         && chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub     && chmod 400 /root/.ssh/id_rsa ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0036ed5ab5a1
+ DEBUG [af1d5ba4] 	Step 32 : ARG INSTALL_MONGO=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 611c383e56d9
+ DEBUG [af1d5ba4] 	Step 33 : ENV INSTALL_MONGO ${INSTALL_MONGO}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 23ecf90384e0
+ DEBUG [af1d5ba4] 	Step 34 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     echo "extension=mongodb.so" >> /etc/php/7.0/cli/conf.d/30-mongodb.ini ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> aca5c7200f7a
+ DEBUG [af1d5ba4] 	Step 35 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 59ca3d1e1dc5
+ DEBUG [af1d5ba4] 	Step 36 : ENV DRUSH_VERSION 8.1.2
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 1fae8132aff3
+ DEBUG [af1d5ba4] 	Step 37 : ARG INSTALL_DRUSH=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 1ee483e70a8d
+ DEBUG [af1d5ba4] 	Step 38 : ENV INSTALL_DRUSH ${INSTALL_DRUSH}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 6daea4acee7e
+ DEBUG [af1d5ba4] 	Step 39 : RUN if [ ${INSTALL_DRUSH} = true ]; then     curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar | bash &&     chmod +x /usr/local/bin/drush &&     drush core-status ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 2b0149e40a84
+ DEBUG [af1d5ba4] 	Step 40 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 94409cb70be8
+ DEBUG [af1d5ba4] 	Step 41 : ARG NODE_VERSION=stable
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 2fa7062a2622
+ DEBUG [af1d5ba4] 	Step 42 : ENV NODE_VERSION ${NODE_VERSION}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0fdda801d0a1
+ DEBUG [af1d5ba4] 	Step 43 : ARG INSTALL_NODE=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 5c522098dfa5
+ DEBUG [af1d5ba4] 	Step 44 : ENV INSTALL_NODE ${INSTALL_NODE}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 9b4d0def7abb
+ DEBUG [af1d5ba4] 	Step 45 : ENV NVM_DIR /home/laradock/.nvm
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> d31430cae685
+ DEBUG [af1d5ba4] 	Step 46 : RUN if [ ${INSTALL_NODE} = true ]; then     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash &&         . $NVM_DIR/nvm.sh &&         nvm install ${NODE_VERSION} &&         nvm use ${NODE_VERSION} &&         nvm alias ${NODE_VERSION} &&         npm install -g gulp bower vue-cli ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 8cda8160e865
+ DEBUG [af1d5ba4] 	Step 47 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> b8bb6fad7a8e
+ DEBUG [af1d5ba4] 	Step 48 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> c36f1b44abe7
+ DEBUG [af1d5ba4] 	Step 49 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="/home/laradock/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 5fa8547613f5
+ DEBUG [af1d5ba4] 	Step 50 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> ca2479b2cfa1
+ DEBUG [af1d5ba4] 	Step 51 : ARG INSTALL_YARN=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> d81cfd2ec7aa
+ DEBUG [af1d5ba4] 	Step 52 : ENV INSTALL_YARN ${INSTALL_YARN}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 55386adbfe9d
+ DEBUG [af1d5ba4] 	Step 53 : ARG YARN_VERSION=latest
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 7500f8353834
+ DEBUG [af1d5ba4] 	Step 54 : ENV YARN_VERSION ${YARN_VERSION}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> f3e6ccd62ce1
+ DEBUG [af1d5ba4] 	Step 55 : RUN if [ ${INSTALL_YARN} = true ]; then     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&     if [ ${YARN_VERSION} = "latest" ]; then         curl -o- -L https://yarnpkg.com/install.sh | bash;     else         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION};     fi &&     echo "" >> ~/.bashrc &&     echo 'export PATH="$HOME/.yarn/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 698ea212afe7
+ DEBUG [af1d5ba4] 	Step 56 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> e6c10f84b56d
+ DEBUG [af1d5ba4] 	Step 57 : RUN if [ ${INSTALL_YARN} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export YARN_DIR="/home/laradock/.yarn"' >> ~/.bashrc &&     echo 'export PATH="$YARN_DIR/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 6db020cfdf0d
+ DEBUG [af1d5ba4] 	Step 58 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 2814deb3214f
+ DEBUG [af1d5ba4] 	Step 59 : ARG INSTALL_AEROSPIKE_EXTENSION=true
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> b77d6229ae74
+ DEBUG [af1d5ba4] 	Step 60 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 9486d86e1641
+ DEBUG [af1d5ba4] 	Step 61 : COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 08f64dbe9d6c
+ DEBUG [af1d5ba4] 	Step 62 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> f42377ca2780
+ DEBUG [af1d5ba4] 	Step 63 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then     rm /etc/php/7.0/cli/conf.d/aerospike.ini ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> fbc257b88f84
+ DEBUG [af1d5ba4] 	Step 64 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> ea35e448863a
+ DEBUG [af1d5ba4] 	Step 65 : ARG INSTALL_V8JS_EXTENSION=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 3efb298723e2
+ DEBUG [af1d5ba4] 	Step 66 : ENV INSTALL_V8JS_EXTENSION ${INSTALL_V8JS_EXTENSION}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> f7499f661f3c
+ DEBUG [af1d5ba4] 	Step 67 : RUN if [ ${INSTALL_V8JS_EXTENSION} = true ]; then     add-apt-repository -y ppa:pinepain/libv8-5.4     && apt-get update     && apt-get install -y php-dev php-pear libv8-5.4     && pecl install v8js     && echo "extension=v8js.so" >> /etc/php/7.0/cli/php.ini ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 7558b0efed93
+ DEBUG [af1d5ba4] 	Step 68 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 4f63ba52fdca
+ DEBUG [af1d5ba4] 	Step 69 : RUN echo "" >> ~/.bashrc &&     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> de5c6d1c1def
+ DEBUG [af1d5ba4] 	Step 70 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> d4e647c7941b
+ DEBUG [af1d5ba4] 	Step 71 : RUN echo "" >> ~/.bashrc &&     echo 'alias art="php artisan"' >> ~/.bashrc
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 9a5c581a91c1
+ DEBUG [af1d5ba4] 	Step 72 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 5cb9882a04d3
+ DEBUG [af1d5ba4] 	Step 73 : ARG INSTALL_LARAVEL_ENVOY=true
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0ec63d75e947
+ DEBUG [af1d5ba4] 	Step 74 : ENV INSTALL_LARAVEL_ENVOY ${INSTALL_LARAVEL_ENVOY}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> dbfb7faebba2
+ DEBUG [af1d5ba4] 	Step 75 : RUN if [ ${INSTALL_LARAVEL_ENVOY} = true ]; then     composer global require "laravel/envoy=~1.0" ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 71f9b411c7f4
+ DEBUG [af1d5ba4] 	Step 76 : USER laradock
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> a3b2084c3ea3
+ DEBUG [af1d5ba4] 	Step 77 : ARG INSTALL_DEPLOYER=false
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 93d6451b7b98
+ DEBUG [af1d5ba4] 	Step 78 : ENV INSTALL_DEPLOYER ${INSTALL_DEPLOYER}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> ffd6bb118901
+ DEBUG [af1d5ba4] 	Step 79 : RUN if [ ${INSTALL_DEPLOYER} = true ]; then     composer global require "deployer/deployer" ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0efcc376d95c
+ DEBUG [af1d5ba4] 	Step 80 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 659f9f2a387d
+ DEBUG [af1d5ba4] 	Step 81 : ARG INSTALL_LINUXBREW=true
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 742cae91d22f
+ DEBUG [af1d5ba4] 	Step 82 : ENV INSTALL_LINUXBREW ${INSTALL_LINUXBREW}
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 8454b1b08f0d
+ DEBUG [af1d5ba4] 	Step 83 : RUN if [ ${INSTALL_LINUXBREW} = true ]; then     apt-get update &&     apt-get upgrade -y &&     apt-get install -y build-essential make cmake scons curl git       ruby autoconf automake autoconf-archive       gettext libtool flex bison       libbz2-dev libcurl4-openssl-dev       libexpat-dev libncurses-dev &&     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew &&     echo "" >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc &&     echo 'export PATH="$LINUXBREWHOME/bin:$PATH"' >> ~/.bashrc &&     echo 'export MANPATH="$LINUXBREWHOME/man:$MANPATH"' >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH="$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc ;fi
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 0cb130f70981
+ DEBUG [af1d5ba4] 	Step 84 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 06211b1293a9
+ DEBUG [af1d5ba4] 	Step 85 : RUN apt-add-repository -y ppa:brightbox/ruby-ng  && apt-get update  && apt-get install -y       ruby$RUBY_MAJOR       ruby$RUBY_MAJOR-dev       make       imagemagick       libbz2-dev       libcurl4-openssl-dev       libevent-dev       libffi-dev       libglib2.0-dev       libjpeg-dev       libmagickcore-dev       libmagickwand-dev       libmysqlclient-dev       libncurses-dev       libpq-dev       libreadline-dev       libsqlite3-dev       libssl-dev       libxml2-dev       libxslt-dev       libyaml-dev       zlib1g-dev  && apt-add-repository -y --remove ppa:brightbox/ruby-ng  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> cf3632f3818f
+ DEBUG [af1d5ba4] 	Step 86 : RUN gem install capistrano         capistrano-rvm         capistrano-rails         capistrano-bundler         capistrano-sidekiq         capistrano-passenger         capistrano-laravel         capistrano-composer         capistrano-npm         capistrano3-unicorn
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> da640ae6acc0
+ DEBUG [af1d5ba4] 	Step 87 : USER root
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 92464ca9fe20
+ DEBUG [af1d5ba4] 	Step 88 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 12a3d46c05f5
+ DEBUG [af1d5ba4] 	Step 89 : WORKDIR /var/www
+ DEBUG [af1d5ba4] 	 ---> Using cache
+ DEBUG [af1d5ba4] 	 ---> 69a16169d4e5
+ DEBUG [af1d5ba4] 	Successfully built 69a16169d4e5
+ DEBUG [af1d5ba4] 	Creating applications
+ DEBUG [af1d5ba4] 	
+ERROR: for applications  Cannot create container for service applications: Conflict. The name "/applications" is already in use by container 0a0f5fa04a995731fb68f648d5d4ee7d3c5ef484a4e4a86ef7a8e2918c3d6d65. You have to remove (or rename) that container to be able to reuse that name.
+Encountered errors while bringing up the project.
+  INFO [af1d5ba4] Finished in 2.871 seconds with exit status 1 (failed).
+ DEBUG [4e86f153] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [4e86f153] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [4e86f153] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [4dae5b31] Running /usr/bin/env docker stop -f applications as root@46.101.23.88
+ DEBUG [4dae5b31] Command: cd /home/releases/20170214191220 && /usr/bin/env docker stop -f applications
+ DEBUG [4dae5b31] 	unknown shorthand flag: 'f' in -f
+See 'docker stop --help'.
+  INFO [4dae5b31] Finished in 0.137 seconds with exit status 125 (failed).
+  INFO [e840e696] Running /usr/bin/env docker rm -f applications as root@46.101.23.88
+ DEBUG [e840e696] Command: cd /home/releases/20170214191220 && /usr/bin/env docker rm -f applications
+ DEBUG [e840e696] 	applications
+  INFO [e840e696] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [24af3138] Running /usr/bin/env docker-compose up --build -d applications as root@46.101.23.88
+ DEBUG [24af3138] Command: cd /home/releases/20170214191220 && /usr/bin/env docker-compose up --build -d applications
+ DEBUG [24af3138] 	Creating applications
+  INFO [24af3138] Finished in 2.713 seconds with exit status 0 (successful).
+ DEBUG [ac6b7833] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [ac6b7833] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [ac6b7833] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [6611549a] Running /usr/bin/env docker stop nginx as root@46.101.23.88
+ DEBUG [6611549a] Command: cd /home/releases/20170214191220 && /usr/bin/env docker stop nginx
+ DEBUG [6611549a] 	nginx
+  INFO [6611549a] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO [74d4709d] Running /usr/bin/env docker rm nginx as root@46.101.23.88
+ DEBUG [74d4709d] Command: cd /home/releases/20170214191220 && /usr/bin/env docker rm nginx
+ DEBUG [74d4709d] 	nginx
+  INFO [74d4709d] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [98b54897] Running /usr/bin/env docker-compose up --build -d nginx as root@46.101.23.88
+ DEBUG [98b54897] Command: cd /home/releases/20170214191220 && /usr/bin/env docker-compose up --build -d nginx
+ DEBUG [98b54897] 	Building workspace
+ DEBUG [98b54897] 	Step 1 : FROM laradock/workspace:1.3
+ DEBUG [98b54897] 	 ---> 4973a22e69b6
+ DEBUG [98b54897] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 4f464f9e5967
+ DEBUG [98b54897] 	Step 3 : ARG PUID=1000
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> c7e386d7105b
+ DEBUG [98b54897] 	Step 4 : ARG PGID=1000
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 93ab1bb060f4
+ DEBUG [98b54897] 	Step 5 : RUN groupadd -g $PGID laradock &&     useradd -u $PUID -g laradock -m laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2e260a028a3f
+ DEBUG [98b54897] 	Step 6 : ARG TZ=UTC
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> fc71d9ac5e6a
+ DEBUG [98b54897] 	Step 7 : ENV TZ ${TZ}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 306b835d6f4e
+ DEBUG [98b54897] 	Step 8 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f9147e16972d
+ DEBUG [98b54897] 	Step 9 : COPY ./composer.json /home/laradock/.composer/composer.json
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> c7ba7430cec8
+ DEBUG [98b54897] 	Step 10 : RUN chown -R laradock:laradock /home/laradock/.composer
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 28c2e53fb0b0
+ DEBUG [98b54897] 	Step 11 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 462b48dc22ad
+ DEBUG [98b54897] 	Step 12 : ARG COMPOSER_GLOBAL_INSTALL=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> b93252a8f0f3
+ DEBUG [98b54897] 	Step 13 : ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 04e105f14ea2
+ DEBUG [98b54897] 	Step 14 : RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then     composer global install ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0bcc7e84197a
+ DEBUG [98b54897] 	Step 15 : RUN echo "" >> ~/.bashrc && echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 3fc04ed7736f
+ DEBUG [98b54897] 	Step 16 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> efd219c64951
+ DEBUG [98b54897] 	Step 17 : COPY ./crontab /etc/cron.d
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 3c7f0a3d009f
+ DEBUG [98b54897] 	Step 18 : RUN chmod -R 644 /etc/cron.d
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 41168a54e8c1
+ DEBUG [98b54897] 	Step 19 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> c3ea3adb45b7
+ DEBUG [98b54897] 	Step 20 : COPY ./aliases.sh /home/laradock/aliases.sh
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> c47dda318e7a
+ DEBUG [98b54897] 	Step 21 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 4a7932fd1a19
+ DEBUG [98b54897] 	Step 22 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 1f3e47a7be8c
+ DEBUG [98b54897] 	Step 23 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 1f9ecf4bb7fd
+ DEBUG [98b54897] 	Step 24 : ARG INSTALL_XDEBUG=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> dcbfc6c450f8
+ DEBUG [98b54897] 	Step 25 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     apt-get update &&     apt-get install -y --force-yes php7.0-xdebug &&     sed -i 's/^/;/g' /etc/php/7.0/cli/conf.d/20-xdebug.ini &&     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> fa7fc8454bbc
+ DEBUG [98b54897] 	Step 26 : COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 000dd0e656ed
+ DEBUG [98b54897] 	Step 27 : ARG INSTALL_WORKSPACE_SSH=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 9fd440e475ce
+ DEBUG [98b54897] 	Step 28 : ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 951bb166c0b1
+ DEBUG [98b54897] 	Step 29 : ADD insecure_id_rsa /tmp/id_rsa
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 3c1548c75321
+ DEBUG [98b54897] 	Step 30 : ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 18ee1261c16c
+ DEBUG [98b54897] 	Step 31 : RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then     rm -f /etc/service/sshd/down &&     cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys         && cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub         && cat /tmp/id_rsa >> /root/.ssh/id_rsa         && rm -f /tmp/id_rsa*         && chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub     && chmod 400 /root/.ssh/id_rsa ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0036ed5ab5a1
+ DEBUG [98b54897] 	Step 32 : ARG INSTALL_MONGO=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 611c383e56d9
+ DEBUG [98b54897] 	Step 33 : ENV INSTALL_MONGO ${INSTALL_MONGO}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 23ecf90384e0
+ DEBUG [98b54897] 	Step 34 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     echo "extension=mongodb.so" >> /etc/php/7.0/cli/conf.d/30-mongodb.ini ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> aca5c7200f7a
+ DEBUG [98b54897] 	Step 35 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 59ca3d1e1dc5
+ DEBUG [98b54897] 	Step 36 : ENV DRUSH_VERSION 8.1.2
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 1fae8132aff3
+ DEBUG [98b54897] 	Step 37 : ARG INSTALL_DRUSH=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 1ee483e70a8d
+ DEBUG [98b54897] 	Step 38 : ENV INSTALL_DRUSH ${INSTALL_DRUSH}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 6daea4acee7e
+ DEBUG [98b54897] 	Step 39 : RUN if [ ${INSTALL_DRUSH} = true ]; then     curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar | bash &&     chmod +x /usr/local/bin/drush &&     drush core-status ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2b0149e40a84
+ DEBUG [98b54897] 	Step 40 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 94409cb70be8
+ DEBUG [98b54897] 	Step 41 : ARG NODE_VERSION=stable
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2fa7062a2622
+ DEBUG [98b54897] 	Step 42 : ENV NODE_VERSION ${NODE_VERSION}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0fdda801d0a1
+ DEBUG [98b54897] 	Step 43 : ARG INSTALL_NODE=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 5c522098dfa5
+ DEBUG [98b54897] 	Step 44 : ENV INSTALL_NODE ${INSTALL_NODE}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 9b4d0def7abb
+ DEBUG [98b54897] 	Step 45 : ENV NVM_DIR /home/laradock/.nvm
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> d31430cae685
+ DEBUG [98b54897] 	Step 46 : RUN if [ ${INSTALL_NODE} = true ]; then     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash &&         . $NVM_DIR/nvm.sh &&         nvm install ${NODE_VERSION} &&         nvm use ${NODE_VERSION} &&         nvm alias ${NODE_VERSION} &&         npm install -g gulp bower vue-cli ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 8cda8160e865
+ DEBUG [98b54897] 	Step 47 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> b8bb6fad7a8e
+ DEBUG [98b54897] 	Step 48 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> c36f1b44abe7
+ DEBUG [98b54897] 	Step 49 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="/home/laradock/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 5fa8547613f5
+ DEBUG [98b54897] 	Step 50 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ca2479b2cfa1
+ DEBUG [98b54897] 	Step 51 : ARG INSTALL_YARN=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> d81cfd2ec7aa
+ DEBUG [98b54897] 	Step 52 : ENV INSTALL_YARN ${INSTALL_YARN}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 55386adbfe9d
+ DEBUG [98b54897] 	Step 53 : ARG YARN_VERSION=latest
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 7500f8353834
+ DEBUG [98b54897] 	Step 54 : ENV YARN_VERSION ${YARN_VERSION}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f3e6ccd62ce1
+ DEBUG [98b54897] 	Step 55 : RUN if [ ${INSTALL_YARN} = true ]; then     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&     if [ ${YARN_VERSION} = "latest" ]; then         curl -o- -L https://yarnpkg.com/install.sh | bash;     else         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION};     fi &&     echo "" >> ~/.bashrc &&     echo 'export PATH="$HOME/.yarn/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 698ea212afe7
+ DEBUG [98b54897] 	Step 56 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> e6c10f84b56d
+ DEBUG [98b54897] 	Step 57 : RUN if [ ${INSTALL_YARN} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export YARN_DIR="/home/laradock/.yarn"' >> ~/.bashrc &&     echo 'export PATH="$YARN_DIR/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 6db020cfdf0d
+ DEBUG [98b54897] 	Step 58 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2814deb3214f
+ DEBUG [98b54897] 	Step 59 : ARG INSTALL_AEROSPIKE_EXTENSION=true
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> b77d6229ae74
+ DEBUG [98b54897] 	Step 60 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 9486d86e1641
+ DEBUG [98b54897] 	Step 61 : COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 08f64dbe9d6c
+ DEBUG [98b54897] 	Step 62 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f42377ca2780
+ DEBUG [98b54897] 	Step 63 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then     rm /etc/php/7.0/cli/conf.d/aerospike.ini ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> fbc257b88f84
+ DEBUG [98b54897] 	Step 64 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ea35e448863a
+ DEBUG [98b54897] 	Step 65 : ARG INSTALL_V8JS_EXTENSION=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 3efb298723e2
+ DEBUG [98b54897] 	Step 66 : ENV INSTALL_V8JS_EXTENSION ${INSTALL_V8JS_EXTENSION}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f7499f661f3c
+ DEBUG [98b54897] 	Step 67 : RUN if [ ${INSTALL_V8JS_EXTENSION} = true ]; then     add-apt-repository -y ppa:pinepain/libv8-5.4     && apt-get update     && apt-get install -y php-dev php-pear libv8-5.4     && pecl install v8js     && echo "extension=v8js.so" >> /etc/php/7.0/cli/php.ini ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 7558b0efed93
+ DEBUG [98b54897] 	Step 68 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 4f63ba52fdca
+ DEBUG [98b54897] 	Step 69 : RUN echo "" >> ~/.bashrc &&     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> de5c6d1c1def
+ DEBUG [98b54897] 	Step 70 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> d4e647c7941b
+ DEBUG [98b54897] 	Step 71 : RUN echo "" >> ~/.bashrc &&     echo 'alias art="php artisan"' >> ~/.bashrc
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 9a5c581a91c1
+ DEBUG [98b54897] 	Step 72 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 5cb9882a04d3
+ DEBUG [98b54897] 	Step 73 : ARG INSTALL_LARAVEL_ENVOY=true
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0ec63d75e947
+ DEBUG [98b54897] 	Step 74 : ENV INSTALL_LARAVEL_ENVOY ${INSTALL_LARAVEL_ENVOY}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> dbfb7faebba2
+ DEBUG [98b54897] 	Step 75 : RUN if [ ${INSTALL_LARAVEL_ENVOY} = true ]; then     composer global require "laravel/envoy=~1.0" ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 71f9b411c7f4
+ DEBUG [98b54897] 	Step 76 : USER laradock
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> a3b2084c3ea3
+ DEBUG [98b54897] 	Step 77 : ARG INSTALL_DEPLOYER=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 93d6451b7b98
+ DEBUG [98b54897] 	Step 78 : ENV INSTALL_DEPLOYER ${INSTALL_DEPLOYER}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ffd6bb118901
+ DEBUG [98b54897] 	Step 79 : RUN if [ ${INSTALL_DEPLOYER} = true ]; then     composer global require "deployer/deployer" ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0efcc376d95c
+ DEBUG [98b54897] 	Step 80 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 659f9f2a387d
+ DEBUG [98b54897] 	Step 81 : ARG INSTALL_LINUXBREW=true
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 742cae91d22f
+ DEBUG [98b54897] 	Step 82 : ENV INSTALL_LINUXBREW ${INSTALL_LINUXBREW}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 8454b1b08f0d
+ DEBUG [98b54897] 	Step 83 : RUN if [ ${INSTALL_LINUXBREW} = true ]; then     apt-get update &&     apt-get upgrade -y &&     apt-get install -y build-essential make cmake scons curl git       ruby autoconf automake autoconf-archive       gettext libtool flex bison       libbz2-dev libcurl4-openssl-dev       libexpat-dev libncurses-dev &&     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew &&     echo "" >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc &&     echo 'export PATH="$LINUXBREWHOME/bin:$PATH"' >> ~/.bashrc &&     echo 'export MANPATH="$LINUXBREWHOME/man:$MANPATH"' >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH="$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0cb130f70981
+ DEBUG [98b54897] 	Step 84 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 06211b1293a9
+ DEBUG [98b54897] 	Step 85 : RUN apt-add-repository -y ppa:brightbox/ruby-ng  && apt-get update  && apt-get install -y       ruby$RUBY_MAJOR       ruby$RUBY_MAJOR-dev       make       imagemagick       libbz2-dev       libcurl4-openssl-dev       libevent-dev       libffi-dev       libglib2.0-dev       libjpeg-dev       libmagickcore-dev       libmagickwand-dev       libmysqlclient-dev       libncurses-dev       libpq-dev       libreadline-dev       libsqlite3-dev       libssl-dev       libxml2-dev       libxslt-dev       libyaml-dev       zlib1g-dev  && apt-add-repository -y --remove ppa:brightbox/ruby-ng  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> cf3632f3818f
+ DEBUG [98b54897] 	Step 86 : RUN gem install capistrano         capistrano-rvm         capistrano-rails         capistrano-bundler         capistrano-sidekiq         capistrano-passenger         capistrano-laravel         capistrano-composer         capistrano-npm         capistrano3-unicorn
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> da640ae6acc0
+ DEBUG [98b54897] 	Step 87 : USER root
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 92464ca9fe20
+ DEBUG [98b54897] 	Step 88 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 12a3d46c05f5
+ DEBUG [98b54897] 	Step 89 : WORKDIR /var/www
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 69a16169d4e5
+ DEBUG [98b54897] 	Successfully built 69a16169d4e5
+ DEBUG [98b54897] 	Building php-fpm
+ DEBUG [98b54897] 	Step 1 : FROM laradock/php-fpm:7.0--1.2
+ DEBUG [98b54897] 	 ---> ee574fa56381
+ DEBUG [98b54897] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2a2cc5b0a458
+ DEBUG [98b54897] 	Step 3 : ARG INSTALL_MCRYPT=true
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 45fed3eb6a01
+ DEBUG [98b54897] 	Step 4 : RUN if [ ${INSTALL_MCRYPT} = true ]; then     apt-get update && apt-get install -y     libfreetype6-dev     libjpeg62-turbo-dev     libmcrypt-dev     libpng12-dev &&     docker-php-ext-install -j$(nproc) iconv mcrypt ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> a0df841859ce
+ DEBUG [98b54897] 	Step 5 : ARG INSTALL_SOAP=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 969388976cdd
+ DEBUG [98b54897] 	Step 6 : RUN if [ ${INSTALL_SOAP} = true ]; then     apt-get -y update &&     apt-get -y install libxml2-dev &&     docker-php-ext-install soap ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> d76ef7369c4f
+ DEBUG [98b54897] 	Step 7 : ARG INSTALL_XDEBUG=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 8ce0821cc2d5
+ DEBUG [98b54897] 	Step 8 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     pecl install xdebug &&     docker-php-ext-enable xdebug ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> a7dfca21bf29
+ DEBUG [98b54897] 	Step 9 : ARG INSTALL_PHPREDIS=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ada5a5a463ef
+ DEBUG [98b54897] 	Step 10 : RUN if [ ${INSTALL_PHPREDIS} = true ]; then     pecl install -o -f redis     &&  rm -rf /tmp/pear     &&  docker-php-ext-enable redis ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 590f98263b6b
+ DEBUG [98b54897] 	Step 11 : COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 92fcb8618a4c
+ DEBUG [98b54897] 	Step 12 : ARG INSTALL_MONGO=true
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 4af09cbe61b3
+ DEBUG [98b54897] 	Step 13 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     docker-php-ext-enable mongodb ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 61dc0fd9b5c3
+ DEBUG [98b54897] 	Step 14 : RUN pecl install mongodb
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> fcd0e7441b48
+ DEBUG [98b54897] 	Step 15 : RUN docker-php-ext-enable mongodb
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 1f5d0a24424b
+ DEBUG [98b54897] 	Step 16 : ARG INSTALL_ZIP_ARCHIVE=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 130578d11c51
+ DEBUG [98b54897] 	Step 17 : RUN if [ ${INSTALL_ZIP_ARCHIVE} = true ]; then     pecl install zip &&     docker-php-ext-enable zip ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> b8c16f4050dc
+ DEBUG [98b54897] 	Step 18 : RUN docker-php-ext-install bcmath
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 2fbfe15fe219
+ DEBUG [98b54897] 	Step 19 : ARG INSTALL_BCMATH=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 16c1a6c5b8a7
+ DEBUG [98b54897] 	Step 20 : RUN if [ ${INSTALL_BCMATH} = true ]; then     docker-php-ext-install bcmath ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 533360a87d9a
+ DEBUG [98b54897] 	Step 21 : ARG INSTALL_MEMCACHED=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 9197f2714a37
+ DEBUG [98b54897] 	Step 22 : RUN if [ ${INSTALL_MEMCACHED} = true ]; then     curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-memcached/archive/php7.tar.gz"     && mkdir -p memcached     && tar -C memcached -zxvf /tmp/memcached.tar.gz --strip 1     && (         cd memcached         && phpize         && ./configure         && make -j$(nproc)         && make install     )     && rm -r memcached     && rm /tmp/memcached.tar.gz     && docker-php-ext-enable memcached ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ce20c1ca932e
+ DEBUG [98b54897] 	Step 23 : ARG INSTALL_EXIF=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> aa9743149db8
+ DEBUG [98b54897] 	Step 24 : RUN if [ ${INSTALL_EXIF} = true ]; then     docker-php-ext-install exif &&     docker-php-ext-enable exif ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 31424ee9abd2
+ DEBUG [98b54897] 	Step 25 : ARG INSTALL_AEROSPIKE_EXTENSION=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f44e2fd86d97
+ DEBUG [98b54897] 	Step 26 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 6219ff09e0e2
+ DEBUG [98b54897] 	Step 27 : COPY ./aerospike.ini /usr/local/etc/php/conf.d/aerospike.ini
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 29d69a4747bf
+ DEBUG [98b54897] 	Step 28 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 912a04eab9d7
+ DEBUG [98b54897] 	Step 29 : ARG INSTALL_OPCACHE=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ffd950c62dd7
+ DEBUG [98b54897] 	Step 30 : RUN if [ ${INSTALL_OPCACHE} = true ]; then     docker-php-ext-install opcache &&     docker-php-ext-enable opcache ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 175b43af72b1
+ DEBUG [98b54897] 	Step 31 : COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 76db87f22fb4
+ DEBUG [98b54897] 	Step 32 : ARG CODEIGNITER=false
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 8546738affc6
+ DEBUG [98b54897] 	Step 33 : RUN if [ ${CODEIGNITER} = true ]; then      docker-php-ext-install mysqli &&      docker-php-ext-install tokenizer ;fi
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ed00b641922c
+ DEBUG [98b54897] 	Step 34 : ADD ./laravel.ini /usr/local/etc/php/conf.d
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 0dd72dff6280
+ DEBUG [98b54897] 	Step 35 : ADD ./laravel.pool.conf /usr/local/etc/php-fpm.d/
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 4bd9eb9bd133
+ DEBUG [98b54897] 	Step 36 : RUN rm -r /var/lib/apt/lists/*
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 7e2cdad8926a
+ DEBUG [98b54897] 	Step 37 : RUN usermod -u 1000 www-data
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> d61bd922a0aa
+ DEBUG [98b54897] 	Step 38 : WORKDIR /var/www
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 925de4ee85fb
+ DEBUG [98b54897] 	Step 39 : CMD php-fpm
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f839930af581
+ DEBUG [98b54897] 	Step 40 : EXPOSE 9000
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> a642d888a0df
+ DEBUG [98b54897] 	Successfully built a642d888a0df
+ DEBUG [98b54897] 	Building nginx
+ DEBUG [98b54897] 	Step 1 : FROM nginx:alpine
+ DEBUG [98b54897] 	 ---> c24ab147adf9
+ DEBUG [98b54897] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 153b266d942b
+ DEBUG [98b54897] 	Step 3 : ADD nginx.conf /etc/nginx/
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> f048e6f5691a
+ DEBUG [98b54897] 	Step 4 : ARG PHP_UPSTREAM=php-fpm
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 67df103a7ad6
+ DEBUG [98b54897] 	Step 5 : RUN apk update     && apk upgrade     && apk add --no-cache bash     && adduser -D -H -u 1000 -s /bin/bash www-data     && rm /etc/nginx/conf.d/default.conf     && echo "upstream php-upstream { server ${PHP_UPSTREAM}:9000; }" > /etc/nginx/conf.d/upstream.conf
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> ba7779b1f003
+ DEBUG [98b54897] 	Step 6 : CMD nginx
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 3573479e52ef
+ DEBUG [98b54897] 	Step 7 : EXPOSE 80 443
+ DEBUG [98b54897] 	 ---> Using cache
+ DEBUG [98b54897] 	 ---> 39a88d08eba1
+ DEBUG [98b54897] 	Successfully built 39a88d08eba1
+ DEBUG [98b54897] 	Starting applications
+ DEBUG [98b54897] 	Creating workspace
+ DEBUG [98b54897] 	Creating php-fpm
+ DEBUG [98b54897] 	
+ERROR: for php-fpm  Cannot create container for service php-fpm: Conflict. The name "/php-fpm" is already in use by container 6f3e51a201a7411fd76c1ee5ed10f10c8b37f84d2d53f03b031220d377ddfd04. You have to remove (or rename) that container to be able to reuse that name.
+Encountered errors while bringing up the project.
+  INFO [98b54897] Finished in 3.162 seconds with exit status 1 (failed).
+ DEBUG [08b90e7c] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [08b90e7c] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [08b90e7c] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [31a4841f] Running /usr/bin/env docker stop php-fpm as root@46.101.23.88
+ DEBUG [31a4841f] Command: cd /home/releases/20170214191220 && /usr/bin/env docker stop php-fpm
+ DEBUG [31a4841f] 	php-fpm
+  INFO [31a4841f] Finished in 0.514 seconds with exit status 0 (successful).
+  INFO [739e63a5] Running /usr/bin/env docker rm php-fpm as root@46.101.23.88
+ DEBUG [739e63a5] Command: cd /home/releases/20170214191220 && /usr/bin/env docker rm php-fpm
+ DEBUG [739e63a5] 	php-fpm
+  INFO [739e63a5] Finished in 0.147 seconds with exit status 0 (successful).
+  INFO [9403b6b3] Running /usr/bin/env docker-compose up --build -d php-fpm as root@46.101.23.88
+ DEBUG [9403b6b3] Command: cd /home/releases/20170214191220 && /usr/bin/env docker-compose up --build -d php-fpm
+ DEBUG [9403b6b3] 	Building workspace
+ DEBUG [9403b6b3] 	Step 1 : FROM laradock/workspace:1.3
+ DEBUG [9403b6b3] 	 ---> 4973a22e69b6
+ DEBUG [9403b6b3] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 4f464f9e5967
+ DEBUG [9403b6b3] 	Step 3 : ARG PUID=1000
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> c7e386d7105b
+ DEBUG [9403b6b3] 	Step 4 : ARG PGID=1000
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 93ab1bb060f4
+ DEBUG [9403b6b3] 	Step 5 : RUN groupadd -g $PGID laradock &&     useradd -u $PUID -g laradock -m laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2e260a028a3f
+ DEBUG [9403b6b3] 	Step 6 : ARG TZ=UTC
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> fc71d9ac5e6a
+ DEBUG [9403b6b3] 	Step 7 : ENV TZ ${TZ}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 306b835d6f4e
+ DEBUG [9403b6b3] 	Step 8 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f9147e16972d
+ DEBUG [9403b6b3] 	Step 9 : COPY ./composer.json /home/laradock/.composer/composer.json
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> c7ba7430cec8
+ DEBUG [9403b6b3] 	Step 10 : RUN chown -R laradock:laradock /home/laradock/.composer
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 28c2e53fb0b0
+ DEBUG [9403b6b3] 	Step 11 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 462b48dc22ad
+ DEBUG [9403b6b3] 	Step 12 : ARG COMPOSER_GLOBAL_INSTALL=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> b93252a8f0f3
+ DEBUG [9403b6b3] 	Step 13 : ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 04e105f14ea2
+ DEBUG [9403b6b3] 	Step 14 : RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then     composer global install ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0bcc7e84197a
+ DEBUG [9403b6b3] 	Step 15 : RUN echo "" >> ~/.bashrc && echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 3fc04ed7736f
+ DEBUG [9403b6b3] 	Step 16 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> efd219c64951
+ DEBUG [9403b6b3] 	Step 17 : COPY ./crontab /etc/cron.d
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 3c7f0a3d009f
+ DEBUG [9403b6b3] 	Step 18 : RUN chmod -R 644 /etc/cron.d
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 41168a54e8c1
+ DEBUG [9403b6b3] 	Step 19 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> c3ea3adb45b7
+ DEBUG [9403b6b3] 	Step 20 : COPY ./aliases.sh /home/laradock/aliases.sh
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> c47dda318e7a
+ DEBUG [9403b6b3] 	Step 21 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 4a7932fd1a19
+ DEBUG [9403b6b3] 	Step 22 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 1f3e47a7be8c
+ DEBUG [9403b6b3] 	Step 23 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 1f9ecf4bb7fd
+ DEBUG [9403b6b3] 	Step 24 : ARG INSTALL_XDEBUG=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> dcbfc6c450f8
+ DEBUG [9403b6b3] 	Step 25 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     apt-get update &&     apt-get install -y --force-yes php7.0-xdebug &&     sed -i 's/^/;/g' /etc/php/7.0/cli/conf.d/20-xdebug.ini &&     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> fa7fc8454bbc
+ DEBUG [9403b6b3] 	Step 26 : COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 000dd0e656ed
+ DEBUG [9403b6b3] 	Step 27 : ARG INSTALL_WORKSPACE_SSH=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 9fd440e475ce
+ DEBUG [9403b6b3] 	Step 28 : ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 951bb166c0b1
+ DEBUG [9403b6b3] 	Step 29 : ADD insecure_id_rsa /tmp/id_rsa
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 3c1548c75321
+ DEBUG [9403b6b3] 	Step 30 : ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 18ee1261c16c
+ DEBUG [9403b6b3] 	Step 31 : RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then     rm -f /etc/service/sshd/down &&     cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys         && cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub         && cat /tmp/id_rsa >> /root/.ssh/id_rsa         && rm -f /tmp/id_rsa*         && chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub     && chmod 400 /root/.ssh/id_rsa ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0036ed5ab5a1
+ DEBUG [9403b6b3] 	Step 32 : ARG INSTALL_MONGO=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 611c383e56d9
+ DEBUG [9403b6b3] 	Step 33 : ENV INSTALL_MONGO ${INSTALL_MONGO}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 23ecf90384e0
+ DEBUG [9403b6b3] 	Step 34 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     echo "extension=mongodb.so" >> /etc/php/7.0/cli/conf.d/30-mongodb.ini ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> aca5c7200f7a
+ DEBUG [9403b6b3] 	Step 35 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 59ca3d1e1dc5
+ DEBUG [9403b6b3] 	Step 36 : ENV DRUSH_VERSION 8.1.2
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 1fae8132aff3
+ DEBUG [9403b6b3] 	Step 37 : ARG INSTALL_DRUSH=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 1ee483e70a8d
+ DEBUG [9403b6b3] 	Step 38 : ENV INSTALL_DRUSH ${INSTALL_DRUSH}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 6daea4acee7e
+ DEBUG [9403b6b3] 	Step 39 : RUN if [ ${INSTALL_DRUSH} = true ]; then     curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar | bash &&     chmod +x /usr/local/bin/drush &&     drush core-status ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2b0149e40a84
+ DEBUG [9403b6b3] 	Step 40 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 94409cb70be8
+ DEBUG [9403b6b3] 	Step 41 : ARG NODE_VERSION=stable
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2fa7062a2622
+ DEBUG [9403b6b3] 	Step 42 : ENV NODE_VERSION ${NODE_VERSION}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0fdda801d0a1
+ DEBUG [9403b6b3] 	Step 43 : ARG INSTALL_NODE=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 5c522098dfa5
+ DEBUG [9403b6b3] 	Step 44 : ENV INSTALL_NODE ${INSTALL_NODE}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 9b4d0def7abb
+ DEBUG [9403b6b3] 	Step 45 : ENV NVM_DIR /home/laradock/.nvm
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> d31430cae685
+ DEBUG [9403b6b3] 	Step 46 : RUN if [ ${INSTALL_NODE} = true ]; then     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash &&         . $NVM_DIR/nvm.sh &&         nvm install ${NODE_VERSION} &&         nvm use ${NODE_VERSION} &&         nvm alias ${NODE_VERSION} &&         npm install -g gulp bower vue-cli ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 8cda8160e865
+ DEBUG [9403b6b3] 	Step 47 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> b8bb6fad7a8e
+ DEBUG [9403b6b3] 	Step 48 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> c36f1b44abe7
+ DEBUG [9403b6b3] 	Step 49 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="/home/laradock/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 5fa8547613f5
+ DEBUG [9403b6b3] 	Step 50 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ca2479b2cfa1
+ DEBUG [9403b6b3] 	Step 51 : ARG INSTALL_YARN=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> d81cfd2ec7aa
+ DEBUG [9403b6b3] 	Step 52 : ENV INSTALL_YARN ${INSTALL_YARN}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 55386adbfe9d
+ DEBUG [9403b6b3] 	Step 53 : ARG YARN_VERSION=latest
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 7500f8353834
+ DEBUG [9403b6b3] 	Step 54 : ENV YARN_VERSION ${YARN_VERSION}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f3e6ccd62ce1
+ DEBUG [9403b6b3] 	Step 55 : RUN if [ ${INSTALL_YARN} = true ]; then     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&     if [ ${YARN_VERSION} = "latest" ]; then         curl -o- -L https://yarnpkg.com/install.sh | bash;     else         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION};     fi &&     echo "" >> ~/.bashrc &&     echo 'export PATH="$HOME/.yarn/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 698ea212afe7
+ DEBUG [9403b6b3] 	Step 56 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> e6c10f84b56d
+ DEBUG [9403b6b3] 	Step 57 : RUN if [ ${INSTALL_YARN} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export YARN_DIR="/home/laradock/.yarn"' >> ~/.bashrc &&     echo 'export PATH="$YARN_DIR/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 6db020cfdf0d
+ DEBUG [9403b6b3] 	Step 58 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2814deb3214f
+ DEBUG [9403b6b3] 	Step 59 : ARG INSTALL_AEROSPIKE_EXTENSION=true
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> b77d6229ae74
+ DEBUG [9403b6b3] 	Step 60 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 9486d86e1641
+ DEBUG [9403b6b3] 	Step 61 : COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 08f64dbe9d6c
+ DEBUG [9403b6b3] 	Step 62 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f42377ca2780
+ DEBUG [9403b6b3] 	Step 63 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then     rm /etc/php/7.0/cli/conf.d/aerospike.ini ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> fbc257b88f84
+ DEBUG [9403b6b3] 	Step 64 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ea35e448863a
+ DEBUG [9403b6b3] 	Step 65 : ARG INSTALL_V8JS_EXTENSION=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 3efb298723e2
+ DEBUG [9403b6b3] 	Step 66 : ENV INSTALL_V8JS_EXTENSION ${INSTALL_V8JS_EXTENSION}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f7499f661f3c
+ DEBUG [9403b6b3] 	Step 67 : RUN if [ ${INSTALL_V8JS_EXTENSION} = true ]; then     add-apt-repository -y ppa:pinepain/libv8-5.4     && apt-get update     && apt-get install -y php-dev php-pear libv8-5.4     && pecl install v8js     && echo "extension=v8js.so" >> /etc/php/7.0/cli/php.ini ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 7558b0efed93
+ DEBUG [9403b6b3] 	Step 68 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 4f63ba52fdca
+ DEBUG [9403b6b3] 	Step 69 : RUN echo "" >> ~/.bashrc &&     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> de5c6d1c1def
+ DEBUG [9403b6b3] 	Step 70 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> d4e647c7941b
+ DEBUG [9403b6b3] 	Step 71 : RUN echo "" >> ~/.bashrc &&     echo 'alias art="php artisan"' >> ~/.bashrc
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 9a5c581a91c1
+ DEBUG [9403b6b3] 	Step 72 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 5cb9882a04d3
+ DEBUG [9403b6b3] 	Step 73 : ARG INSTALL_LARAVEL_ENVOY=true
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0ec63d75e947
+ DEBUG [9403b6b3] 	Step 74 : ENV INSTALL_LARAVEL_ENVOY ${INSTALL_LARAVEL_ENVOY}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> dbfb7faebba2
+ DEBUG [9403b6b3] 	Step 75 : RUN if [ ${INSTALL_LARAVEL_ENVOY} = true ]; then     composer global require "laravel/envoy=~1.0" ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 71f9b411c7f4
+ DEBUG [9403b6b3] 	Step 76 : USER laradock
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> a3b2084c3ea3
+ DEBUG [9403b6b3] 	Step 77 : ARG INSTALL_DEPLOYER=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 93d6451b7b98
+ DEBUG [9403b6b3] 	Step 78 : ENV INSTALL_DEPLOYER ${INSTALL_DEPLOYER}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ffd6bb118901
+ DEBUG [9403b6b3] 	Step 79 : RUN if [ ${INSTALL_DEPLOYER} = true ]; then     composer global require "deployer/deployer" ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0efcc376d95c
+ DEBUG [9403b6b3] 	Step 80 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 659f9f2a387d
+ DEBUG [9403b6b3] 	Step 81 : ARG INSTALL_LINUXBREW=true
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 742cae91d22f
+ DEBUG [9403b6b3] 	Step 82 : ENV INSTALL_LINUXBREW ${INSTALL_LINUXBREW}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 8454b1b08f0d
+ DEBUG [9403b6b3] 	Step 83 : RUN if [ ${INSTALL_LINUXBREW} = true ]; then     apt-get update &&     apt-get upgrade -y &&     apt-get install -y build-essential make cmake scons curl git       ruby autoconf automake autoconf-archive       gettext libtool flex bison       libbz2-dev libcurl4-openssl-dev       libexpat-dev libncurses-dev &&     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew &&     echo "" >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc &&     echo 'export PATH="$LINUXBREWHOME/bin:$PATH"' >> ~/.bashrc &&     echo 'export MANPATH="$LINUXBREWHOME/man:$MANPATH"' >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH="$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0cb130f70981
+ DEBUG [9403b6b3] 	Step 84 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 06211b1293a9
+ DEBUG [9403b6b3] 	Step 85 : RUN apt-add-repository -y ppa:brightbox/ruby-ng  && apt-get update  && apt-get install -y       ruby$RUBY_MAJOR       ruby$RUBY_MAJOR-dev       make       imagemagick       libbz2-dev       libcurl4-openssl-dev       libevent-dev       libffi-dev       libglib2.0-dev       libjpeg-dev       libmagickcore-dev       libmagickwand-dev       libmysqlclient-dev       libncurses-dev       libpq-dev       libreadline-dev       libsqlite3-dev       libssl-dev       libxml2-dev       libxslt-dev       libyaml-dev       zlib1g-dev  && apt-add-repository -y --remove ppa:brightbox/ruby-ng  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> cf3632f3818f
+ DEBUG [9403b6b3] 	Step 86 : RUN gem install capistrano         capistrano-rvm         capistrano-rails         capistrano-bundler         capistrano-sidekiq         capistrano-passenger         capistrano-laravel         capistrano-composer         capistrano-npm         capistrano3-unicorn
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> da640ae6acc0
+ DEBUG [9403b6b3] 	Step 87 : USER root
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 92464ca9fe20
+ DEBUG [9403b6b3] 	Step 88 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 12a3d46c05f5
+ DEBUG [9403b6b3] 	Step 89 : WORKDIR /var/www
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 69a16169d4e5
+ DEBUG [9403b6b3] 	Successfully built 69a16169d4e5
+ DEBUG [9403b6b3] 	Building php-fpm
+ DEBUG [9403b6b3] 	Step 1 : FROM laradock/php-fpm:7.0--1.2
+ DEBUG [9403b6b3] 	 ---> ee574fa56381
+ DEBUG [9403b6b3] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2a2cc5b0a458
+ DEBUG [9403b6b3] 	Step 3 : ARG INSTALL_MCRYPT=true
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 45fed3eb6a01
+ DEBUG [9403b6b3] 	Step 4 : RUN if [ ${INSTALL_MCRYPT} = true ]; then     apt-get update && apt-get install -y     libfreetype6-dev     libjpeg62-turbo-dev     libmcrypt-dev     libpng12-dev &&     docker-php-ext-install -j$(nproc) iconv mcrypt ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> a0df841859ce
+ DEBUG [9403b6b3] 	Step 5 : ARG INSTALL_SOAP=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 969388976cdd
+ DEBUG [9403b6b3] 	Step 6 : RUN if [ ${INSTALL_SOAP} = true ]; then     apt-get -y update &&     apt-get -y install libxml2-dev &&     docker-php-ext-install soap ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> d76ef7369c4f
+ DEBUG [9403b6b3] 	Step 7 : ARG INSTALL_XDEBUG=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 8ce0821cc2d5
+ DEBUG [9403b6b3] 	Step 8 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     pecl install xdebug &&     docker-php-ext-enable xdebug ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> a7dfca21bf29
+ DEBUG [9403b6b3] 	Step 9 : ARG INSTALL_PHPREDIS=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ada5a5a463ef
+ DEBUG [9403b6b3] 	Step 10 : RUN if [ ${INSTALL_PHPREDIS} = true ]; then     pecl install -o -f redis     &&  rm -rf /tmp/pear     &&  docker-php-ext-enable redis ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 590f98263b6b
+ DEBUG [9403b6b3] 	Step 11 : COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 92fcb8618a4c
+ DEBUG [9403b6b3] 	Step 12 : ARG INSTALL_MONGO=true
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 4af09cbe61b3
+ DEBUG [9403b6b3] 	Step 13 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     docker-php-ext-enable mongodb ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 61dc0fd9b5c3
+ DEBUG [9403b6b3] 	Step 14 : RUN pecl install mongodb
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> fcd0e7441b48
+ DEBUG [9403b6b3] 	Step 15 : RUN docker-php-ext-enable mongodb
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 1f5d0a24424b
+ DEBUG [9403b6b3] 	Step 16 : ARG INSTALL_ZIP_ARCHIVE=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 130578d11c51
+ DEBUG [9403b6b3] 	Step 17 : RUN if [ ${INSTALL_ZIP_ARCHIVE} = true ]; then     pecl install zip &&     docker-php-ext-enable zip ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> b8c16f4050dc
+ DEBUG [9403b6b3] 	Step 18 : RUN docker-php-ext-install bcmath
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 2fbfe15fe219
+ DEBUG [9403b6b3] 	Step 19 : ARG INSTALL_BCMATH=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 16c1a6c5b8a7
+ DEBUG [9403b6b3] 	Step 20 : RUN if [ ${INSTALL_BCMATH} = true ]; then     docker-php-ext-install bcmath ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 533360a87d9a
+ DEBUG [9403b6b3] 	Step 21 : ARG INSTALL_MEMCACHED=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 9197f2714a37
+ DEBUG [9403b6b3] 	Step 22 : RUN if [ ${INSTALL_MEMCACHED} = true ]; then     curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-memcached/archive/php7.tar.gz"     && mkdir -p memcached     && tar -C memcached -zxvf /tmp/memcached.tar.gz --strip 1     && (         cd memcached         && phpize         && ./configure         && make -j$(nproc)         && make install     )     && rm -r memcached     && rm /tmp/memcached.tar.gz     && docker-php-ext-enable memcached ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ce20c1ca932e
+ DEBUG [9403b6b3] 	Step 23 : ARG INSTALL_EXIF=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> aa9743149db8
+ DEBUG [9403b6b3] 	Step 24 : RUN if [ ${INSTALL_EXIF} = true ]; then     docker-php-ext-install exif &&     docker-php-ext-enable exif ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 31424ee9abd2
+ DEBUG [9403b6b3] 	Step 25 : ARG INSTALL_AEROSPIKE_EXTENSION=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f44e2fd86d97
+ DEBUG [9403b6b3] 	Step 26 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 6219ff09e0e2
+ DEBUG [9403b6b3] 	Step 27 : COPY ./aerospike.ini /usr/local/etc/php/conf.d/aerospike.ini
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 29d69a4747bf
+ DEBUG [9403b6b3] 	Step 28 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 912a04eab9d7
+ DEBUG [9403b6b3] 	Step 29 : ARG INSTALL_OPCACHE=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ffd950c62dd7
+ DEBUG [9403b6b3] 	Step 30 : RUN if [ ${INSTALL_OPCACHE} = true ]; then     docker-php-ext-install opcache &&     docker-php-ext-enable opcache ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 175b43af72b1
+ DEBUG [9403b6b3] 	Step 31 : COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 76db87f22fb4
+ DEBUG [9403b6b3] 	Step 32 : ARG CODEIGNITER=false
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 8546738affc6
+ DEBUG [9403b6b3] 	Step 33 : RUN if [ ${CODEIGNITER} = true ]; then      docker-php-ext-install mysqli &&      docker-php-ext-install tokenizer ;fi
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> ed00b641922c
+ DEBUG [9403b6b3] 	Step 34 : ADD ./laravel.ini /usr/local/etc/php/conf.d
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 0dd72dff6280
+ DEBUG [9403b6b3] 	Step 35 : ADD ./laravel.pool.conf /usr/local/etc/php-fpm.d/
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 4bd9eb9bd133
+ DEBUG [9403b6b3] 	Step 36 : RUN rm -r /var/lib/apt/lists/*
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 7e2cdad8926a
+ DEBUG [9403b6b3] 	Step 37 : RUN usermod -u 1000 www-data
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> d61bd922a0aa
+ DEBUG [9403b6b3] 	Step 38 : WORKDIR /var/www
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> 925de4ee85fb
+ DEBUG [9403b6b3] 	Step 39 : CMD php-fpm
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> f839930af581
+ DEBUG [9403b6b3] 	Step 40 : EXPOSE 9000
+ DEBUG [9403b6b3] 	 ---> Using cache
+ DEBUG [9403b6b3] 	 ---> a642d888a0df
+ DEBUG [9403b6b3] 	Successfully built a642d888a0df
+ DEBUG [9403b6b3] 	Starting applications
+ DEBUG [9403b6b3] 	workspace is up-to-date
+ DEBUG [9403b6b3] 	Creating php-fpm
+  INFO [9403b6b3] Finished in 3.100 seconds with exit status 0 (successful).
+ DEBUG [2219ddae] Running if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [2219ddae] Command: if test ! -d /home/releases/20170214191220; then echo "Directory does not exist '/home/releases/20170214191220'" 1>&2; false; fi
+ DEBUG [2219ddae] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [a155655d] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [a155655d] Command: cd /home/releases/20170214191220 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [a155655d] 	Cannot create cache directory /var/www/.composer/cache/repo/https---packagist.org/, or directory is not writable. Proceeding without cache
+ DEBUG [a155655d] 	Cannot create cache directory /var/www/.composer/cache/files/, or directory is not writable. Proceeding without cache
+ DEBUG [a155655d] 	Loading composer repositories with package information
+ DEBUG [a155655d] 	Updating dependencies (including require-dev)
+ DEBUG [a155655d] 	
+ DEBUG [a155655d] 	                                                            
+  [RuntimeException]                                        
+  /var/www/vendor does not exist and could not be created.  
+                                                            
+
+ DEBUG [a155655d] 	install [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--ignore-platform-reqs] [--] [<packages>]...
+ DEBUG [a155655d] 	
+  INFO [a155655d] Finished in 5.459 seconds with exit status 1 (failed).
+ DEBUG [299e231a] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [299e231a] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [299e231a] 	20170214190445	20170214191220
+ DEBUG [299e231a] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [4588a3d5] Running /usr/bin/env rm -rf /home/releases/20170214190445 as root@46.101.23.88
+ DEBUG [4588a3d5] Command: /usr/bin/env rm -rf /home/releases/20170214190445
+  INFO [4588a3d5] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [542026d8] Running /usr/bin/env ln -s /home/releases/20170214191220 /home/releases/current as root@46.101.23.88
+ DEBUG [542026d8] Command: /usr/bin/env ln -s /home/releases/20170214191220 /home/releases/current
+  INFO [542026d8] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [6c824c0a] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [6c824c0a] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [6c824c0a] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [ad170233] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [ad170233] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [ad170233] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [f6aa637b] Running /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191220 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [f6aa637b] Command: cd /home/releases && /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191220 by romain" >> /home/revisions.log
+  INFO [f6aa637b] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:14:45 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5337471c] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [5337471c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5337471c] Finished in 12.909 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [feb3f85f] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [feb3f85f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [feb3f85f] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [58f15dcb] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [58f15dcb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [58f15dcb] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e	HEAD
+  INFO [58f15dcb] Finished in 6.164 seconds with exit status 0 (successful).
+  INFO [cda91201] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [cda91201] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [cda91201] Finished in 0.171 seconds with exit status 0 (successful).
+ DEBUG [9f82292c] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [9f82292c] Command: [ -f /home/current/REVISION ]
+ DEBUG [9f82292c] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [af87bc0a] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [af87bc0a] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [af87bc0a] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e
+ DEBUG [af87bc0a] Finished in 0.134 seconds with exit status 0 (successful).
+ DEBUG [11471fbe] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [11471fbe] Command: [ -f /home/repo/HEAD ]
+ DEBUG [11471fbe] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [7be6bba2] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [7be6bba2] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [7be6bba2] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [dcb7b21e] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [dcb7b21e] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [dcb7b21e] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [0d24eb61] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [0d24eb61] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0d24eb61] 	Fetching origin
+  INFO [0d24eb61] Finished in 1.725 seconds with exit status 0 (successful).
+ DEBUG [b8ff7d88] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b8ff7d88] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [b8ff7d88] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [55498ee9] Running /usr/bin/env mkdir -p /home/releases/20170214191506 as root@46.101.23.88
+ DEBUG [55498ee9] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214191506 )
+  INFO [55498ee9] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [9973375a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214191506 as root@46.101.23.88
+ DEBUG [9973375a] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214191506 )
+  INFO [9973375a] Finished in 0.732 seconds with exit status 0 (successful).
+ DEBUG [519401f6] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [519401f6] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [519401f6] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [1ae326c1] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [1ae326c1] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1ae326c1] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e
+ DEBUG [1ae326c1] Finished in 0.126 seconds with exit status 0 (successful).
+ DEBUG [1fc622ec] Running if test ! -d /home/releases/20170214191506; then echo "Directory does not exist '/home/releases/20170214191506'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [1fc622ec] Command: if test ! -d /home/releases/20170214191506; then echo "Directory does not exist '/home/releases/20170214191506'" 1>&2; false; fi
+ DEBUG [1fc622ec] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [7507bf5d] Running /usr/bin/env echo "bf463b4d619e6d44526d4d0198d5cf5aafbedd5e" >> REVISION as root@46.101.23.88
+ DEBUG [7507bf5d] Command: cd /home/releases/20170214191506 && /usr/bin/env echo "bf463b4d619e6d44526d4d0198d5cf5aafbedd5e" >> REVISION
+  INFO [7507bf5d] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [88dda425] Running /usr/bin/env ln -s /home/releases/20170214191506 /home/releases/current as root@46.101.23.88
+ DEBUG [88dda425] Command: /usr/bin/env ln -s /home/releases/20170214191506 /home/releases/current
+  INFO [88dda425] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [8f370500] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [8f370500] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [8f370500] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [e4319db2] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [e4319db2] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [e4319db2] 	20170214191220	20170214191506
+ DEBUG [e4319db2] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [6627fbec] Running /usr/bin/env rm -rf /home/releases/20170214191220 as root@46.101.23.88
+ DEBUG [6627fbec] Command: /usr/bin/env rm -rf /home/releases/20170214191220
+  INFO [6627fbec] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [56f429fc] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [56f429fc] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [56f429fc] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [ec6085a6] Running /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191506 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [ec6085a6] Command: cd /home/releases && /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191506 by romain" >> /home/revisions.log
+  INFO [ec6085a6] Finished in 0.121 seconds with exit status 0 (successful).
