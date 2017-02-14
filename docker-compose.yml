@@ -10,6 +10,7 @@ services:
         volumes:
             - ../app:/var/www
             - ../mongo:/data/db
+            - ../redis:/data
 
 ### Workspace Utilities Container ###########################
 
@@ -181,7 +182,7 @@ services:
         container_name: redis
         build: ./dockerised/redis
         volumes:
-            - redis:/data
+            - ../redis:/data
         ports:
             - "6379:6379"
 
