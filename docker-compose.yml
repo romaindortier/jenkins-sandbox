@@ -11,6 +11,7 @@ services:
             - ../app:/var/www
             - ../mongo:/data/db
             - ../redis:/data
+            - ../mysql:/var/lib/mysql
 
 ### Workspace Utilities Container ###########################
 
@@ -162,7 +163,7 @@ services:
                 - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
         volumes:
-            - mysql:/var/lib/mysql
+            - ../mysql:/var/lib/mysql
         ports:
             - "3306:3306"
 
