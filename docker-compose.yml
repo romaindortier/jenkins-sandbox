@@ -8,7 +8,7 @@ services:
         container_name: applications
         image: tianon/true
         volumes:
-            - ../app:/var/www
+            - ../../current/app:/var/www
             - ../mongo:/data/db
             - ../redis:/data
             - ../mysql:/var/lib/mysql
@@ -39,9 +39,6 @@ services:
                 - TZ=UTC
         volumes_from:
             - applications
-        extra_hosts:
-            # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
-            # - "dockerhost:10.0.75.1"
         ports:
            - "2222:22"
         tty: true
