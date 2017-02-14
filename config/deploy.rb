@@ -2,14 +2,15 @@
 # lock '3.7'
 
 namespace :deploy do
-  task :dockerbuild do
+  task :dockerstop do
         on release_roles :all do
       puts "============= Starting Docker Update ============="
-      # execute echo $(docker ps -a -q)
-      # execute "docker stop $(docker ps -a -q)"
+      # puts $(docker ps -a -q)
+      execute: 'docker', :stop, 'webserver'
       # execute "docker rm $(docker ps -a -q)"
     end
   end
+
   task :dockerbuild do
         on release_roles :all do
             within release_path do

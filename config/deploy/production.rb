@@ -6,7 +6,7 @@
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
-server '46.101.23.88', user: 'deploy', roles: %w{docker}
+server '46.101.23.88', user: 'root', roles: %w{docker}
 
 # set :deploy_via, :copy
 set :scm, :git
@@ -19,5 +19,7 @@ set :deploy_to, '/home'
 
 set :keep_releases, 1
 
+
+after 'deploy:updating', 'deploy:dockerstop'
 after 'deploy:updating', 'deploy:dockerbuild'
 after 'deploy:updating', 'deploy:dockerup'
