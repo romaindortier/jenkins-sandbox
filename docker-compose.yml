@@ -96,13 +96,6 @@ services:
         restart: always
         volumes:
             - ./jenkins_home:/var/lib/jenkins
-        links:
-            - workspace
-            - mysql
-            - nginx
-            - php-fpm
-            - mongo
-            - redis
         ports:
           - 8076:8080
         tty: true
