@@ -23,7 +23,7 @@ set :keep_releases, 1
 # after 'deploy:updating', 'deploy:dockerstop'
 # after 'deploy:updating', 'deploy:dockerbuild'
 # after 'deploy:updating', 'deploy:dockerup'
-after 'deploy:updating', 'deploy:workspace_up'
+# after 'deploy:updating', 'deploy:workspace_up'
 after 'deploy:updating', 'deploy:mysql_up'
 after 'deploy:updating', 'deploy:nginx_up'
 after 'deploy:updating', 'deploy:phpfm_up'
