@@ -148,7 +148,7 @@ namespace :deploy do
     task :composer_run do
       on release_roles :all do
             within release_path do
-                execute :docker , :exec, "-u", "www-data", "-i", "workspace", "composer", "install"
+                execute :docker , :exec, "-u", "www-data", "-i", "workspace", "composer", "install", raise_on_non_zero_exit: false
             end
         end
     end
