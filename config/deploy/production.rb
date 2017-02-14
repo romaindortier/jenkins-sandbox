@@ -21,5 +21,5 @@ set :keep_releases, 1
 
 
 after 'deploy:updating', 'deploy:dockerstop'
-after 'deploy:updating', 'deploy:dockerbuild'
+# after 'deploy:updating', 'deploy:dockerbuild'
 after 'deploy:updating', 'deploy:dockerup'

@@ -1297,3 +1297,68 @@ Encountered errors while bringing up the project.
   INFO [a5c051bd] Running /usr/bin/env docker-compose build webserver as root@46.101.23.88
  DEBUG [a5c051bd] Command: cd /home/releases/20170214131936 && /usr/bin/env docker-compose build webserver
  DEBUG [a5c051bd] 	No such service: webserver
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 14:21:12 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [947ede20] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [947ede20] Command: /usr/bin/env mkdir -p /tmp
+  INFO [947ede20] Finished in 5.113 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [92933201] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [92933201] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [92933201] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [d39c70a8] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [d39c70a8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [d39c70a8] 	da12714d2878ffee8353edd5f613778a18d93fc7	HEAD
+  INFO [d39c70a8] Finished in 8.655 seconds with exit status 0 (successful).
+  INFO [fb1cb0a6] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [fb1cb0a6] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [fb1cb0a6] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [7eff8cc9] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [7eff8cc9] Command: [ -f /home/current/REVISION ]
+ DEBUG [7eff8cc9] Finished in 0.118 seconds with exit status 1 (failed).
+ DEBUG [7725f4ba] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [7725f4ba] Command: [ -f /home/repo/HEAD ]
+ DEBUG [7725f4ba] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [c4adc90c] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [c4adc90c] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [c4adc90c] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [55a8138a] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [55a8138a] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [55a8138a] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [f0d52f6f] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [f0d52f6f] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f0d52f6f] 	Fetching origin
+ DEBUG [f0d52f6f] 	From github.com:romaindortier/jenkins-sandbox
+   be37e58..da12714  master     -> master
+  INFO [f0d52f6f] Finished in 1.424 seconds with exit status 0 (successful).
+ DEBUG [e94b360a] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e94b360a] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [e94b360a] Finished in 0.651 seconds with exit status 0 (successful).
+  INFO [ddb99890] Running /usr/bin/env mkdir -p /home/releases/20170214132128 as root@46.101.23.88
+ DEBUG [ddb99890] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214132128 )
+  INFO [ddb99890] Finished in 0.571 seconds with exit status 0 (successful).
+  INFO [68883939] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214132128 as root@46.101.23.88
+ DEBUG [68883939] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214132128 )
+  INFO [68883939] Finished in 0.663 seconds with exit status 0 (successful).
+ DEBUG [cf7f72c0] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [cf7f72c0] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [cf7f72c0] Finished in 0.696 seconds with exit status 0 (successful).
+ DEBUG [24bdfbf2] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [24bdfbf2] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [24bdfbf2] 	da12714d2878ffee8353edd5f613778a18d93fc7
+ DEBUG [24bdfbf2] Finished in 0.798 seconds with exit status 0 (successful).
+ DEBUG [f9feef82] Running if test ! -d /home/releases/20170214132128; then echo "Directory does not exist '/home/releases/20170214132128'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [f9feef82] Command: if test ! -d /home/releases/20170214132128; then echo "Directory does not exist '/home/releases/20170214132128'" 1>&2; false; fi
+ DEBUG [f9feef82] Finished in 0.733 seconds with exit status 0 (successful).
+  INFO [fe9bd80a] Running /usr/bin/env echo "da12714d2878ffee8353edd5f613778a18d93fc7" >> REVISION as root@46.101.23.88
+ DEBUG [fe9bd80a] Command: cd /home/releases/20170214132128 && /usr/bin/env echo "da12714d2878ffee8353edd5f613778a18d93fc7" >> REVISION
+  INFO [fe9bd80a] Finished in 0.790 seconds with exit status 0 (successful).
+ DEBUG [b9107299] Running if test ! -d /home/releases/20170214132128; then echo "Directory does not exist '/home/releases/20170214132128'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b9107299] Command: if test ! -d /home/releases/20170214132128; then echo "Directory does not exist '/home/releases/20170214132128'" 1>&2; false; fi
+ DEBUG [b9107299] Finished in 0.761 seconds with exit status 0 (successful).
+  INFO [fb93ca43] Running /usr/bin/env docker-compose build webserver as root@46.101.23.88
+ DEBUG [fb93ca43] Command: cd /home/releases/20170214132128 && /usr/bin/env docker-compose build webserver
+ DEBUG [fb93ca43] 	No such service: webserver
