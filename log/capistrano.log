@@ -25258,3 +25258,108 @@ Encountered errors while bringing up the project.
  DEBUG [d9da6b25] Command: cd /home/releases/20170214172935 && /usr/bin/env docker exec -u www-data -i workspace composer install
  DEBUG [d9da6b25] 	Composer could not find a composer.json file in /var/www
 To initialize a project, please create a composer.json file as described in the https://getcomposer.org/ "Getting Started" section
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 19:01:21 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [942e1b37] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [942e1b37] Command: /usr/bin/env mkdir -p /tmp
+  INFO [942e1b37] Finished in 15.669 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [18033e6e] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [18033e6e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [18033e6e] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [b51158ec] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [b51158ec] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [b51158ec] 	243b83433e3dbe3e34c6460e3a9d1b6ec5b121a3	HEAD
+  INFO [b51158ec] Finished in 3.408 seconds with exit status 0 (successful).
+  INFO [629ce0bd] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [629ce0bd] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [629ce0bd] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [6d221d0c] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [6d221d0c] Command: [ -f /home/current/REVISION ]
+ DEBUG [6d221d0c] Finished in 0.114 seconds with exit status 1 (failed).
+ DEBUG [4e947f7e] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [4e947f7e] Command: [ -f /home/repo/HEAD ]
+ DEBUG [4e947f7e] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [cbf0f4de] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [cbf0f4de] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [cbf0f4de] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [85075d78] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [85075d78] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [85075d78] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [b256d193] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [b256d193] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b256d193] 	Fetching origin
+ DEBUG [b256d193] 	From github.com:romaindortier/jenkins-sandbox
+ DEBUG [b256d193] 	   cfee12a..243b834  master     -> master
+  INFO [b256d193] Finished in 1.914 seconds with exit status 0 (successful).
+ DEBUG [d1cb7773] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [d1cb7773] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [d1cb7773] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [bff2ec15] Running /usr/bin/env mkdir -p /home/releases/20170214180143 as root@46.101.23.88
+ DEBUG [bff2ec15] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214180143 )
+  INFO [bff2ec15] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [4210c0f0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214180143 as root@46.101.23.88
+ DEBUG [4210c0f0] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214180143 )
+  INFO [4210c0f0] Finished in 0.989 seconds with exit status 0 (successful).
+ DEBUG [aa8121bd] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [aa8121bd] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [aa8121bd] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [229f7e14] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [229f7e14] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [229f7e14] 	243b83433e3dbe3e34c6460e3a9d1b6ec5b121a3
+ DEBUG [229f7e14] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [8a50a989] Running if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [8a50a989] Command: if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi
+ DEBUG [8a50a989] Finished in 0.132 seconds with exit status 0 (successful).
+  INFO [52b7a73d] Running /usr/bin/env echo "243b83433e3dbe3e34c6460e3a9d1b6ec5b121a3" >> REVISION as root@46.101.23.88
+ DEBUG [52b7a73d] Command: cd /home/releases/20170214180143 && /usr/bin/env echo "243b83433e3dbe3e34c6460e3a9d1b6ec5b121a3" >> REVISION
+  INFO [52b7a73d] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [1bab202d] Running if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [1bab202d] Command: if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi
+ DEBUG [1bab202d] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [89fad620] Running /usr/bin/env docker stop -f applications as root@46.101.23.88
+ DEBUG [89fad620] Command: cd /home/releases/20170214180143 && /usr/bin/env docker stop -f applications
+ DEBUG [89fad620] 	unknown shorthand flag: 'f' in -f
+See 'docker stop --help'.
+  INFO [89fad620] Finished in 0.304 seconds with exit status 125 (failed).
+  INFO [f2a4ce16] Running /usr/bin/env docker rm -f applications as root@46.101.23.88
+ DEBUG [f2a4ce16] Command: cd /home/releases/20170214180143 && /usr/bin/env docker rm -f applications
+ DEBUG [f2a4ce16] 	applications
+  INFO [f2a4ce16] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [29657de5] Running /usr/bin/env docker-compose up --build -d applications as root@46.101.23.88
+ DEBUG [29657de5] Command: cd /home/releases/20170214180143 && /usr/bin/env docker-compose up --build -d applications
+ DEBUG [29657de5] 	Creating network "20170214180143_default" with the default driver
+ DEBUG [29657de5] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [29657de5] Finished in 2.538 seconds with exit status 1 (failed).
+ DEBUG [8ee8366a] Running if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [8ee8366a] Command: if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi
+ DEBUG [8ee8366a] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [66c9a13e] Running /usr/bin/env docker stop workspace as root@46.101.23.88
+ DEBUG [66c9a13e] Command: cd /home/releases/20170214180143 && /usr/bin/env docker stop workspace
+ DEBUG [66c9a13e] 	workspace
+  INFO [66c9a13e] Finished in 0.788 seconds with exit status 0 (successful).
+  INFO [050d1e3d] Running /usr/bin/env docker rm workspace as root@46.101.23.88
+ DEBUG [050d1e3d] Command: cd /home/releases/20170214180143 && /usr/bin/env docker rm workspace
+ DEBUG [050d1e3d] 	workspace
+  INFO [050d1e3d] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [59c19d6c] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [59c19d6c] Command: cd /home/releases/20170214180143 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [59c19d6c] 	Creating network "20170214180143_default" with the default driver
+ DEBUG [59c19d6c] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [59c19d6c] Finished in 1.714 seconds with exit status 1 (failed).
+ DEBUG [92d49574] Running if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [92d49574] Command: if test ! -d /home/releases/20170214180143; then echo "Directory does not exist '/home/releases/20170214180143'" 1>&2; false; fi
+ DEBUG [92d49574] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [419f0a63] Running /usr/bin/env docker stop nginx as root@46.101.23.88
+ DEBUG [419f0a63] Command: cd /home/releases/20170214180143 && /usr/bin/env docker stop nginx
+ DEBUG [419f0a63] 	nginx
+  INFO [419f0a63] Finished in 0.451 seconds with exit status 0 (successful).
+  INFO [bd321e98] Running /usr/bin/env docker rm nginx as root@46.101.23.88
+ DEBUG [bd321e98] Command: cd /home/releases/20170214180143 && /usr/bin/env docker rm nginx
+ DEBUG [bd321e98] 	nginx
+  INFO [bd321e98] Finished in 0.146 seconds with exit status 0 (successful).
+  INFO [888b28ab] Running /usr/bin/env docker-compose up --build -d nginx as root@46.101.23.88
+ DEBUG [888b28ab] Command: cd /home/releases/20170214180143 && /usr/bin/env docker-compose up --build -d nginx
