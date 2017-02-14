@@ -20,16 +20,11 @@ services:
         container_name: workspace
         build:
             context: ./dockerised/workspace
-                # - INSTALL_MCRYPT=true
                 - INSTALL_MONGO=true
-                # - INSTALL_OPCACHE=true
-                # - INSTALL_MEMCACHED=true
                 - INSTALL_XDEBUG=true
-                # - INSTALL_PHPREDIS=true
                 - INSTALL_NODE=false
                 - INSTALL_YARN=false
                 - INSTALL_DRUSH=true
-                # - INSTALL_BCMATH=true
                 - INSTALL_AEROSPIKE_EXTENSION=false
                 - INSTALL_V8JS_EXTENSION=false
                 - COMPOSER_GLOBAL_INSTALL=true

@@ -4764,3 +4764,82 @@ Done installing documentation for capistrano3-unicorn after 0 seconds
  DEBUG [0d91a28a] 	 ---> Using cache
  DEBUG [0d91a28a] 	 ---> 69a16169d4e5
  DEBUG [0d91a28a] 	Service 'workspace' failed to build: One or more build-args [INSTALL_PHPREDIS INSTALL_MCRYPT INSTALL_MEMCACHED INSTALL_OPCACHE INSTALL_BCMATH] were not consumed, failing build.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 15:02:27 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2b47ebba] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [2b47ebba] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2b47ebba] Finished in 19.873 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [e8913969] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [e8913969] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [e8913969] Finished in 1.904 seconds with exit status 0 (successful).
+  INFO [2c40da36] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [2c40da36] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [2c40da36] 	c960ce7156b86c46b2f7155e016d7a1aad449d62	HEAD
+  INFO [2c40da36] Finished in 12.305 seconds with exit status 0 (successful).
+  INFO [46b687d3] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [46b687d3] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [46b687d3] Finished in 0.165 seconds with exit status 0 (successful).
+ DEBUG [80723830] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [80723830] Command: [ -f /home/current/REVISION ]
+ DEBUG [80723830] Finished in 0.124 seconds with exit status 1 (failed).
+ DEBUG [47b5bde1] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [47b5bde1] Command: [ -f /home/repo/HEAD ]
+ DEBUG [47b5bde1] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [07436278] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [07436278] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [07436278] Finished in 0.320 seconds with exit status 0 (successful).
+  INFO [48a907ee] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [48a907ee] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [48a907ee] Finished in 0.321 seconds with exit status 0 (successful).
+  INFO [b19ada39] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [b19ada39] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b19ada39] 	Fetching origin
+ DEBUG [b19ada39] 	From github.com:romaindortier/jenkins-sandbox
+   78adb4b..c960ce7  master     -> master
+  INFO [b19ada39] Finished in 2.483 seconds with exit status 0 (successful).
+ DEBUG [b0f139b6] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b0f139b6] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [b0f139b6] Finished in 0.629 seconds with exit status 0 (successful).
+  INFO [0ed5e95a] Running /usr/bin/env mkdir -p /home/releases/20170214140315 as root@46.101.23.88
+ DEBUG [0ed5e95a] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214140315 )
+  INFO [0ed5e95a] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [dfbcfad6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214140315 as root@46.101.23.88
+ DEBUG [dfbcfad6] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214140315 )
+  INFO [dfbcfad6] Finished in 0.394 seconds with exit status 0 (successful).
+ DEBUG [70ef9748] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [70ef9748] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [70ef9748] Finished in 0.402 seconds with exit status 0 (successful).
+ DEBUG [bb410035] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [bb410035] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bb410035] 	c960ce7156b86c46b2f7155e016d7a1aad449d62
+ DEBUG [bb410035] Finished in 0.453 seconds with exit status 0 (successful).
+ DEBUG [91a1e329] Running if test ! -d /home/releases/20170214140315; then echo "Directory does not exist '/home/releases/20170214140315'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [91a1e329] Command: if test ! -d /home/releases/20170214140315; then echo "Directory does not exist '/home/releases/20170214140315'" 1>&2; false; fi
+ DEBUG [91a1e329] Finished in 0.395 seconds with exit status 0 (successful).
+  INFO [40c15a87] Running /usr/bin/env echo "c960ce7156b86c46b2f7155e016d7a1aad449d62" >> REVISION as root@46.101.23.88
+ DEBUG [40c15a87] Command: cd /home/releases/20170214140315 && /usr/bin/env echo "c960ce7156b86c46b2f7155e016d7a1aad449d62" >> REVISION
+  INFO [40c15a87] Finished in 0.405 seconds with exit status 0 (successful).
+ DEBUG [d4ce8863] Running if test ! -d /home/releases/20170214140315; then echo "Directory does not exist '/home/releases/20170214140315'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [d4ce8863] Command: if test ! -d /home/releases/20170214140315; then echo "Directory does not exist '/home/releases/20170214140315'" 1>&2; false; fi
+ DEBUG [d4ce8863] Finished in 0.493 seconds with exit status 0 (successful).
+  INFO [79f4cf4a] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [79f4cf4a] Command: cd /home/releases/20170214140315 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [79f4cf4a] 	yaml.parser.ParserError: while parsing a block mapping
+  in "./docker-compose.yml", line 22, column 13
+expected <block end>, but found '<block sequence start>'
+  in "./docker-compose.yml", line 24, column 17
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 15:04:13 +0100 cap production deploy:cleanup
+  INFO ---------------------------------------------------------------------------
+ DEBUG [68c8e3c6] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [68c8e3c6] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [68c8e3c6] 	20170214132128	20170214132244	20170214135337	20170214135913	20170214140315
+ DEBUG [68c8e3c6] Finished in 9.688 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 5 deployed releases on 46.101.23.88
+  INFO [2390eeb9] Running /usr/bin/env rm -rf /home/releases/20170214132128 /home/releases/20170214132244 /home/releases/20170214135337 /home/releases/20170214135913 as root@46.101.23.88
+ DEBUG [2390eeb9] Command: /usr/bin/env rm -rf /home/releases/20170214132128 /home/releases/20170214132244 /home/releases/20170214135337 /home/releases/20170214135913
+  INFO [2390eeb9] Finished in 8.654 seconds with exit status 0 (successful).
