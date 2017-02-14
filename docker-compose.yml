@@ -20,17 +20,16 @@ services:
         container_name: workspace
         build:
             context: ./dockerised/workspace
-            args:
-                - INSTALL_MCRYPT=true
+                # - INSTALL_MCRYPT=true
                 - INSTALL_MONGO=true
-                - INSTALL_OPCACHE=true
-                - INSTALL_MEMCACHED=true
+                # - INSTALL_OPCACHE=true
+                # - INSTALL_MEMCACHED=true
                 - INSTALL_XDEBUG=true
-                - INSTALL_PHPREDIS=true
+                # - INSTALL_PHPREDIS=true
                 - INSTALL_NODE=false
                 - INSTALL_YARN=false
                 - INSTALL_DRUSH=true
-                - INSTALL_BCMATH=true
+                # - INSTALL_BCMATH=true
                 - INSTALL_AEROSPIKE_EXTENSION=false
                 - INSTALL_V8JS_EXTENSION=false
                 - COMPOSER_GLOBAL_INSTALL=true
@@ -47,7 +46,7 @@ services:
             - applications
         extra_hosts:
             # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
-            - "dockerhost:10.0.75.1"
+            # - "dockerhost:10.0.75.1"
         ports:
            - "2222:22"
         tty: true
