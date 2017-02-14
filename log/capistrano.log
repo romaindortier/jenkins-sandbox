@@ -25598,3 +25598,181 @@ See 'docker stop --help'.
   INFO [81ec5e3a] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
  DEBUG [81ec5e3a] Command: cd /home/releases/20170214180411 && /usr/bin/env docker exec -u www-data -i workspace composer install
  DEBUG [81ec5e3a] 	Error response from daemon: No such container: workspace
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 19:12:00 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f936393a] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [f936393a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f936393a] Finished in 2.752 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [9776a778] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [9776a778] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [9776a778] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [a1cc6ed2] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [a1cc6ed2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [a1cc6ed2] 	00ce73e87126c25b2b688750f45d9d1bbbc2a940	HEAD
+  INFO [a1cc6ed2] Finished in 3.212 seconds with exit status 0 (successful).
+  INFO [9aefd710] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [9aefd710] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [9aefd710] Finished in 0.128 seconds with exit status 0 (successful).
+ DEBUG [1ad0934f] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [1ad0934f] Command: [ -f /home/current/REVISION ]
+ DEBUG [1ad0934f] Finished in 0.120 seconds with exit status 1 (failed).
+ DEBUG [f96f41d2] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [f96f41d2] Command: [ -f /home/repo/HEAD ]
+ DEBUG [f96f41d2] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [3de2649e] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [3de2649e] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [3de2649e] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [14784d86] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [14784d86] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [14784d86] Finished in 0.131 seconds with exit status 0 (successful).
+  INFO [18b1a887] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [18b1a887] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [18b1a887] 	Fetching origin
+ DEBUG [18b1a887] 	From github.com:romaindortier/jenkins-sandbox
+ DEBUG [18b1a887] 	   ebbdd92..00ce73e  master     -> master
+  INFO [18b1a887] Finished in 1.694 seconds with exit status 0 (successful).
+ DEBUG [da1259d0] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [da1259d0] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [da1259d0] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [5c7c4e22] Running /usr/bin/env mkdir -p /home/releases/20170214181208 as root@46.101.23.88
+ DEBUG [5c7c4e22] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214181208 )
+  INFO [5c7c4e22] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [8229f6b8] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214181208 as root@46.101.23.88
+ DEBUG [8229f6b8] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214181208 )
+  INFO [8229f6b8] Finished in 0.756 seconds with exit status 0 (successful).
+ DEBUG [5a5d1436] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [5a5d1436] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [5a5d1436] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [69481cab] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [69481cab] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [69481cab] 	00ce73e87126c25b2b688750f45d9d1bbbc2a940
+ DEBUG [69481cab] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [e1f56ce9] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e1f56ce9] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [e1f56ce9] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [fb2578e2] Running /usr/bin/env echo "00ce73e87126c25b2b688750f45d9d1bbbc2a940" >> REVISION as root@46.101.23.88
+ DEBUG [fb2578e2] Command: cd /home/releases/20170214181208 && /usr/bin/env echo "00ce73e87126c25b2b688750f45d9d1bbbc2a940" >> REVISION
+  INFO [fb2578e2] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [316b50cd] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [316b50cd] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [316b50cd] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [3e0310fa] Running /usr/bin/env docker stop workspace as root@46.101.23.88
+ DEBUG [3e0310fa] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop workspace
+ DEBUG [3e0310fa] 	Error response from daemon: No such container: workspace
+  INFO [3e0310fa] Finished in 0.146 seconds with exit status 1 (failed).
+  INFO [acca4bb5] Running /usr/bin/env docker rm workspace as root@46.101.23.88
+ DEBUG [acca4bb5] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm workspace
+ DEBUG [acca4bb5] 	Error response from daemon: No such container: workspace
+  INFO [acca4bb5] Finished in 0.133 seconds with exit status 1 (failed).
+  INFO [356b09b2] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [356b09b2] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [356b09b2] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [356b09b2] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [356b09b2] Finished in 1.478 seconds with exit status 1 (failed).
+ DEBUG [6b59610a] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [6b59610a] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [6b59610a] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [12229bba] Running /usr/bin/env docker stop -f applications as root@46.101.23.88
+ DEBUG [12229bba] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop -f applications
+ DEBUG [12229bba] 	unknown shorthand flag: 'f' in -f
+See 'docker stop --help'.
+  INFO [12229bba] Finished in 0.143 seconds with exit status 125 (failed).
+  INFO [3aa0736c] Running /usr/bin/env docker rm -f applications as root@46.101.23.88
+ DEBUG [3aa0736c] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm -f applications
+ DEBUG [3aa0736c] 	Error response from daemon: No such container: applications
+  INFO [3aa0736c] Finished in 0.142 seconds with exit status 1 (failed).
+  INFO [a243bb95] Running /usr/bin/env docker-compose up --build -d applications as root@46.101.23.88
+ DEBUG [a243bb95] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d applications
+ DEBUG [a243bb95] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [a243bb95] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [a243bb95] Finished in 1.368 seconds with exit status 1 (failed).
+ DEBUG [64b80d30] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [64b80d30] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [64b80d30] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [a58829c6] Running /usr/bin/env docker stop nginx as root@46.101.23.88
+ DEBUG [a58829c6] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop nginx
+ DEBUG [a58829c6] 	Error response from daemon: No such container: nginx
+  INFO [a58829c6] Finished in 0.135 seconds with exit status 1 (failed).
+  INFO [f7abfed3] Running /usr/bin/env docker rm nginx as root@46.101.23.88
+ DEBUG [f7abfed3] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm nginx
+ DEBUG [f7abfed3] 	Error response from daemon: No such container: nginx
+  INFO [f7abfed3] Finished in 0.134 seconds with exit status 1 (failed).
+  INFO [dfec54e7] Running /usr/bin/env docker-compose up --build -d nginx as root@46.101.23.88
+ DEBUG [dfec54e7] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d nginx
+ DEBUG [dfec54e7] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [dfec54e7] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [dfec54e7] Finished in 1.647 seconds with exit status 1 (failed).
+ DEBUG [e58e9fb7] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e58e9fb7] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [e58e9fb7] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [f7778edb] Running /usr/bin/env docker stop php-fpm as root@46.101.23.88
+ DEBUG [f7778edb] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop php-fpm
+ DEBUG [f7778edb] 	Error response from daemon: No such container: php-fpm
+  INFO [f7778edb] Finished in 0.148 seconds with exit status 1 (failed).
+  INFO [e442e030] Running /usr/bin/env docker rm php-fpm as root@46.101.23.88
+ DEBUG [e442e030] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm php-fpm
+ DEBUG [e442e030] 	Error response from daemon: No such container: php-fpm
+  INFO [e442e030] Finished in 0.128 seconds with exit status 1 (failed).
+  INFO [99079f07] Running /usr/bin/env docker-compose up --build -d php-fpm as root@46.101.23.88
+ DEBUG [99079f07] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d php-fpm
+ DEBUG [99079f07] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [99079f07] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [99079f07] Finished in 1.441 seconds with exit status 1 (failed).
+ DEBUG [465308df] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [465308df] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [465308df] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [95c98e30] Running /usr/bin/env docker stop phpmyadmin as root@46.101.23.88
+ DEBUG [95c98e30] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop phpmyadmin
+ DEBUG [95c98e30] 	Error response from daemon: No such container: phpmyadmin
+  INFO [95c98e30] Finished in 0.129 seconds with exit status 1 (failed).
+  INFO [73345957] Running /usr/bin/env docker rm phpmyadmin as root@46.101.23.88
+ DEBUG [73345957] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm phpmyadmin
+ DEBUG [73345957] 	Error response from daemon: No such container: phpmyadmin
+  INFO [73345957] Finished in 0.146 seconds with exit status 1 (failed).
+  INFO [0b506af4] Running /usr/bin/env docker-compose up --build -d phpmyadmin as root@46.101.23.88
+ DEBUG [0b506af4] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d phpmyadmin
+ DEBUG [0b506af4] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [0b506af4] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [0b506af4] Finished in 1.367 seconds with exit status 1 (failed).
+ DEBUG [bdac2bc6] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [bdac2bc6] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [bdac2bc6] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [9c03e613] Running /usr/bin/env docker stop varnish as root@46.101.23.88
+ DEBUG [9c03e613] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop varnish
+ DEBUG [9c03e613] 	Error response from daemon: No such container: varnish
+  INFO [9c03e613] Finished in 0.138 seconds with exit status 1 (failed).
+  INFO [ad654733] Running /usr/bin/env docker rm varnish as root@46.101.23.88
+ DEBUG [ad654733] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm varnish
+ DEBUG [ad654733] 	Error response from daemon: No such container: varnish
+  INFO [ad654733] Finished in 0.134 seconds with exit status 1 (failed).
+  INFO [880ff304] Running /usr/bin/env docker-compose up --build -d varnish as root@46.101.23.88
+ DEBUG [880ff304] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d varnish
+ DEBUG [880ff304] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [880ff304] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [880ff304] Finished in 1.529 seconds with exit status 1 (failed).
+ DEBUG [7107fe1d] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [7107fe1d] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [7107fe1d] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [d7ce3f1c] Running /usr/bin/env docker stop jenkins as root@46.101.23.88
+ DEBUG [d7ce3f1c] Command: cd /home/releases/20170214181208 && /usr/bin/env docker stop jenkins
+ DEBUG [d7ce3f1c] 	Error response from daemon: No such container: jenkins
+  INFO [d7ce3f1c] Finished in 0.133 seconds with exit status 1 (failed).
+  INFO [91923fd8] Running /usr/bin/env docker rm jenkins as root@46.101.23.88
+ DEBUG [91923fd8] Command: cd /home/releases/20170214181208 && /usr/bin/env docker rm jenkins
+ DEBUG [91923fd8] 	Error response from daemon: No such container: jenkins
+  INFO [91923fd8] Finished in 0.128 seconds with exit status 1 (failed).
+  INFO [5a7ae7c0] Running /usr/bin/env docker-compose up --build -d jenkins as root@46.101.23.88
+ DEBUG [5a7ae7c0] Command: cd /home/releases/20170214181208 && /usr/bin/env docker-compose up --build -d jenkins
+ DEBUG [5a7ae7c0] 	Creating network "20170214181208_default" with the default driver
+ DEBUG [5a7ae7c0] 	failed to parse pool request for address space "LocalDefault" pool "" subpool "": could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+  INFO [5a7ae7c0] Finished in 1.460 seconds with exit status 1 (failed).
+ DEBUG [c1ac08cf] Running if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [c1ac08cf] Command: if test ! -d /home/releases/20170214181208; then echo "Directory does not exist '/home/releases/20170214181208'" 1>&2; false; fi
+ DEBUG [c1ac08cf] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [2caf7257] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [2caf7257] Command: cd /home/releases/20170214181208 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [2caf7257] 	Error response from daemon: No such container: workspace

@@ -8,7 +8,7 @@ services:
         container_name: applications
         image: tianon/true
         volumes:
-            - ../app:/var/www
+            - ./app:/var/www
             - ./mongo:/data/db
             - ./redis:/data
             - ./mysql:/var/lib/mysql
