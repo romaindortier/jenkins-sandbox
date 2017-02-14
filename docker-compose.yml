@@ -9,6 +9,7 @@ services:
         image: tianon/true
         volumes:
             - ../app:/var/www
+            - ../mongo:/data/db
 
 ### Workspace Utilities Container ###########################
 
@@ -172,7 +173,7 @@ services:
         ports:
             - "27017:27017"
         volumes:
-            - mongo:/data/db
+            - ../mongo:/data/db
 
 ### Redis Container #########################################
 
