@@ -13,7 +13,7 @@ namespace :deploy do
   task :dockerbuild do
         on release_roles :all do
             within release_path do
-                execute :'docker-compose', :build, 'webserver'
+                execute :'docker-compose', :build, 'webserver', raise_on_non_zero_exit: false
             end
         end
   end
@@ -22,9 +22,9 @@ namespace :deploy do
   task :varnish_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'varnish'
-              # execute :'docker', :rm, 'varnish'
-              execute :'docker-compose', :up, '--build', '-d', 'varnish'
+              execute :'docker', :stop, 'varnish', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'varnish', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'varnish', raise_on_non_zero_exit: false
           end
       end
   end
@@ -33,9 +33,9 @@ namespace :deploy do
   task :nginx_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'nginx'
-              # execute :'docker', :rm, 'nginx'
-              execute :'docker-compose', :up, '--build', '-d', 'nginx'
+              execute :'docker', :stop, 'nginx', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'nginx', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'nginx', raise_on_non_zero_exit: false
           end
       end
   end
@@ -44,9 +44,9 @@ namespace :deploy do
   task :redis_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'redis'
-              # execute :'docker', :rm, 'redis'
-              execute :'docker-compose', :up, '--build', '-d', 'redis'
+              execute :'docker', :stop, 'redis', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'redis', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'redis', raise_on_non_zero_exit: false
           end
       end
   end
@@ -55,9 +55,9 @@ namespace :deploy do
   task :phpmyadmin_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'phpmyadmin'
-              # execute :'docker', :rm, 'phpmyadmin'
-              execute :'docker-compose', :up, '--build', '-d', 'phpmyadmin'
+              execute :'docker', :stop, 'phpmyadmin', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'phpmyadmin', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'phpmyadmin', raise_on_non_zero_exit: false
           end
       end
   end
@@ -66,9 +66,9 @@ namespace :deploy do
   task :mongo_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'mongo'
-              # execute :'docker', :rm, 'mongo'
-              execute :'docker-compose', :up, '--build', '-d', 'mongo'
+              execute :'docker', :stop, 'mongo', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'mongo', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'mongo', raise_on_non_zero_exit: false
           end
       end
   end
@@ -77,9 +77,9 @@ namespace :deploy do
   task :mysql_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'mysql'
-              # execute :'docker', :rm, 'mysql'
-              execute :'docker-compose', :up, '--build', '-d', 'mysql'
+              execute :'docker', :stop, 'mysql', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'mysql', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'mysql', raise_on_non_zero_exit: false
           end
       end
   end
@@ -89,9 +89,9 @@ namespace :deploy do
   task :phpfpm_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'php-fpm'
-              # execute :'docker', :rm, 'php-fpm'
-              execute :'docker-compose', :up, '--build', '-d', 'php-fpm'
+              execute :'docker', :stop, 'php-fpm', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'php-fpm', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'php-fpm', raise_on_non_zero_exit: false
           end
       end
   end
@@ -101,9 +101,9 @@ namespace :deploy do
   task :jenkins_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'jenkins'
-              # execute :'docker', :rm, 'jenkins'
-              execute :'docker-compose', :up, '--build', '-d', 'jenkins'
+              execute :'docker', :stop, 'jenkins', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'jenkins', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'jenkins', raise_on_non_zero_exit: false
           end
       end
   end
@@ -113,21 +113,20 @@ namespace :deploy do
   task :applications_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'applications'
-              # execute :'docker', :rm, 'applications'
-              execute :'docker-compose', :up, '--build', '-d', 'applications'
+              execute :'docker', :stop, '-f', 'applications', raise_on_non_zero_exit: false
+              execute :'docker', :rm, '-f', 'applications', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'applications', raise_on_non_zero_exit: false
           end
       end
   end
-
 
   desc "Workspace"
   task :workspace_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'workspace'
-              # execute :'docker', :rm, 'workspace'
-              execute :'docker-compose', :up, '--build', '-d', 'workspace'
+              execute :'docker', :stop, 'workspace', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'workspace', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'workspace', raise_on_non_zero_exit: false
           end
       end
   end
@@ -137,9 +136,9 @@ namespace :deploy do
   task :rabbitmq_up do
       on release_roles :all do
           within release_path do
-              # execute :'docker', :stop, 'rabbitmq'
-              # execute :'docker', :rm, 'rabbitmq'
-              execute :'docker-compose', :up, '--build', '-d', 'rabbitmq'
+              execute :'docker', :stop, 'rabbitmq', raise_on_non_zero_exit: false
+              execute :'docker', :rm, 'rabbitmq', raise_on_non_zero_exit: false
+              execute :'docker-compose', :up, '--build', '-d', 'rabbitmq', raise_on_non_zero_exit: false
           end
       end
   end

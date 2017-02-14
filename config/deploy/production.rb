@@ -9,7 +9,6 @@
 server '46.101.23.88', user: 'root', roles: %w{docker}
 
 # set :deploy_via, :copy
-set :scm, :git
 set :application, 'jenkins-sandbox'
 set :repo_url, 'git@github.com:romaindortier/jenkins-sandbox' # example git@github.com:capistrano/capistrano.git
 set :deploy_via, :remote_cache
@@ -25,10 +24,11 @@ set :keep_releases, 1
 # after 'deploy:updating', 'deploy:dockerup'
 # after 'deploy:updating', 'deploy:workspace_up'
 # after 'deploy:updating', 'deploy:mysql_up'
-after 'deploy:updating', 'deploy:nginx_up'
-after 'deploy:updating', 'deploy:phpfm_up'
 after 'deploy:updating', 'deploy:applications_up'
-after 'deploy:updating', 'deploy:phpmyadmin_up'
+after 'deploy:updating', 'deploy:workspace_up'
+after 'deploy:updating', 'deploy:nginx_up'
+after 'deploy:updating', 'deploy:phpfpm_up'
+# after 'deploy:updating', 'deploy:phpmyadmin_up'
 # after 'deploy:updating', 'deploy:rabbitmq_up'
 # after 'deploy:updating', 'deploy:redis_up'
 # after 'deploy:updating', 'deploy:mongo_up'
