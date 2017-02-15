@@ -1,0 +1,209 @@
+version: '2'
+
+services:
+
+### Applications Code Container #############################
+
+    applications:
+        container_name: applications
+        image: tianon/true
+        volumes:
+            - ./home/current/app:/var/www
+            - ./home/current/mongo:/data/db
+            - ./home/current/redis:/data
+            - ./home/current/mysql:/var/lib/mysql
+            - ./home/current/conf/varnish:/etc/varnish
+            - ./home/current/jenkins_home:/var/lib/jenkins
+
+### Workspace Utilities Container ###########################
+
+    workspace:
+        container_name: workspace
+        build:
+            context: ./dockerised/workspace
+            args:
+                - INSTALL_MONGO=true
+                - INSTALL_XDEBUG=true
+                - INSTALL_NODE=false
+                - INSTALL_YARN=false
+                - INSTALL_DRUSH=true
+                - INSTALL_AEROSPIKE_EXTENSION=false
+                - INSTALL_V8JS_EXTENSION=false
+                - COMPOSER_GLOBAL_INSTALL=true
+                - INSTALL_WORKSPACE_SSH=false
+                - INSTALL_LARAVEL_ENVOY=false
+                - INSTALL_DEPLOYER=false
+                - INSTALL_LINUXBREW=false
+                - PUID=1000
+                - PGID=1000
+                - NODE_VERSION=stable
+                - YARN_VERSION=latest
+                - TZ=UTC
+        volumes_from:
+            - applications
+        ports:
+           - "2222:22"
+        tty: true
+
+
+### Webserver Container ###########################
+    webserver:
+        container_name: webserver
+        build:
+            context: ./dockerised/nginx
+            dockerfile: Dockerfile
+        ports:
+           - "80:80"
+        volumes:
+           - "./home/current/:/usr/share/nginx/html"
+
+### PHP-FPM Container #######################################
+
+    php-fpm:
+        container_name: php-fpm
+        build:
+            context: ./dockerised/php-fpm
+            args:
+                - INSTALL_MCRYPT=true
+                - INSTALL_XDEBUG=false
+                - INSTALL_SOAP=false
+                - INSTALL_MONGO=false
+                - INSTALL_ZIP_ARCHIVE=false
+                - INSTALL_BCMATH=false
+                - INSTALL_PHPREDIS=false
+                - INSTALL_MEMCACHED=false
+                - INSTALL_OPCACHE=false
+                - INSTALL_EXIF=false
+                - INSTALL_AEROSPIKE_EXTENSION=false
+                - CODEIGNITER=false
+            dockerfile: Dockerfile-70
+        volumes_from:
+            - applications
+        expose:
+            - "9000"
+        links:
+            - workspace
+        extra_hosts:
+            # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
+            - "dockerhost:10.0.75.1"
+        environment:
+            # IMPORTANT: Set the Remote Interpreter entry matching name to `laravel`
+            - PHP_IDE_CONFIG=serverName=laravel
+
+### Jenkins 3 Container ##################################
+    jenkins:
+        build: ./dockerised/jenkins
+        container_name: jenkins
+        restart: always
+        volumes:
+            - ./home/current/jenkins_home:/var/lib/jenkins
+        ports:
+          - 8076:8080
+        tty: true
+
+### Nginx Server Container ##################################
+    nginx:
+        container_name: nginx
+        build:
+            context: ./dockerised/nginx
+            args:
+                - PHP_UPSTREAM=php-fpm
+        volumes_from:
+            - applications
+        volumes:
+            - ./dockerised/logs/nginx/:/var/log/nginx
+            - ./dockerised/nginx/sites/:/etc/nginx/sites-available
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - php-fpm
+
+### Varnish Container #################################
+
+    varnish:
+        container_name: varnish
+        image: wodby/drupal-varnish:1.0.0
+        volumes:
+            - ./dockerised/conf/varnish:/etc/varnish
+        depends_on:
+            - nginx
+        environment:
+            VARNISH_SECRET: secret
+            VARNISH_BACKEND_HOST: nginx
+            VARNISH_BACKEND_PORT: 80
+            VARNISH_MEMORY_SIZE: 256M
+            VARNISH_STORAGE_SIZE: 1024M
+        ports:
+            - "8004:6081" # HTTP Proxy
+            - "8005:6082" # Control terminal
+        tty: true
+
+### MySQL Container #########################################
+
+    mysql:
+        container_name: mysql
+        build:
+            context: ./dockerised/mysql
+            args:
+                - MYSQL_DATABASE=homestead
+                - MYSQL_USER=homestead
+                - MYSQL_PASSWORD=secret
+                - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - "3306:3306"
+
+### MongoDB Container #######################################
+
+    mongo:
+        container_name: mongo
+        build: ./dockerised/mongo
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./home/current/mongo:/data/db
+
+### Redis Container #########################################
+
+    redis:
+        container_name: redis
+        build: ./dockerised/redis
+        volumes:
+            - ./home/current/redis:/data
+        ports:
+            - "6379:6379"
+
+### RabbitMQ Container ######################################
+
+    rabbitmq:
+        container_name: rabbitmq
+        build: ./dockerised/rabbitmq
+        ports:
+            - "5672:5672"
+            - "15671:15671"
+            - "8080:15672"
+        privileged: true
+        environment:
+            RABBITMQ_DEFAULT_USER: guest
+            RABBITMQ_DEFAULT_PASS: guest
+        links:
+            - php-fpm
+
+### phpMyAdmin Container ####################################
+    phpmyadmin:
+        container_name: phpmyadmin
+        build: ./dockerised/phpmyadmin
+        environment:
+            PMA_ARBITRARY: 1
+            MYSQL_USER: homestead
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - "8086:80"
+        links:
+            # for mysql container
+            - "mysql:db"
+            # for mariadb container
+            # - "mariadb:db

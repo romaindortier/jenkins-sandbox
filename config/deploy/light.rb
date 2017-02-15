@@ -16,11 +16,11 @@ set :deploy_via, :remote_cache
 set :branch,      "master"
 set :deploy_to, '/home'
 
-set :keep_releases, 1
+set :keep_releases, 2
 
 
 # after 'deploy:updating', 'deploy:dockerstop'
-after 'deploy:updating', 'deploy:dockerbuild'
+# after 'deploy:updating', 'deploy:dockerbuild'
 # after 'deploy:updating', 'deploy:dockerup'
 # after 'deploy:updating', 'deploy:workspace_up'
 # after 'deploy:updating', 'deploy:mysql_up'
