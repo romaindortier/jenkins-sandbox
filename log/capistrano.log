@@ -32005,3 +32005,1210 @@ Encountered errors while bringing up the project.
   INFO [ec6085a6] Running /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191506 by romain" >> /home/revisions.log as root@46.101.23.88
  DEBUG [ec6085a6] Command: cd /home/releases && /usr/bin/env echo "Branch master (at bf463b4d619e6d44526d4d0198d5cf5aafbedd5e) deployed as release 20170214191506 by romain" >> /home/revisions.log
   INFO [ec6085a6] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:20:31 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6df30f53] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [6df30f53] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6df30f53] Finished in 1.798 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [2d2ca555] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [2d2ca555] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [2d2ca555] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [e25e26a4] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [e25e26a4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [e25e26a4] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [e25e26a4] Finished in 3.329 seconds with exit status 0 (successful).
+  INFO [6b333931] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [6b333931] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [6b333931] Finished in 0.169 seconds with exit status 0 (successful).
+ DEBUG [fc6a46c7] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [fc6a46c7] Command: [ -f /home/current/REVISION ]
+ DEBUG [fc6a46c7] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [30805850] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [30805850] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [30805850] 	bf463b4d619e6d44526d4d0198d5cf5aafbedd5e
+ DEBUG [30805850] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [7732ccb5] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [7732ccb5] Command: [ -f /home/repo/HEAD ]
+ DEBUG [7732ccb5] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [a9cea72e] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [a9cea72e] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [a9cea72e] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [944cc994] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [944cc994] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [944cc994] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [34f0a2a9] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [34f0a2a9] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [34f0a2a9] 	Fetching origin
+ DEBUG [34f0a2a9] 	From github.com:romaindortier/jenkins-sandbox
+   bf463b4..1f24a6f  master     -> master
+  INFO [34f0a2a9] Finished in 2.623 seconds with exit status 0 (successful).
+ DEBUG [93d075a0] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [93d075a0] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [93d075a0] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [3347d940] Running /usr/bin/env mkdir -p /home/releases/20170214192051 as root@46.101.23.88
+ DEBUG [3347d940] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214192051 )
+  INFO [3347d940] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [b86164d6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192051 as root@46.101.23.88
+ DEBUG [b86164d6] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192051 )
+  INFO [b86164d6] Finished in 0.799 seconds with exit status 0 (successful).
+ DEBUG [6024fdec] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [6024fdec] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [6024fdec] Finished in 0.123 seconds with exit status 0 (successful).
+ DEBUG [b84b3231] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [b84b3231] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b84b3231] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [b84b3231] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [afa537a5] Running if test ! -d /home/releases/20170214192051; then echo "Directory does not exist '/home/releases/20170214192051'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [afa537a5] Command: if test ! -d /home/releases/20170214192051; then echo "Directory does not exist '/home/releases/20170214192051'" 1>&2; false; fi
+ DEBUG [afa537a5] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [0679c3da] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [0679c3da] Command: cd /home/releases/20170214192051 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [0679c3da] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [34c3ff98] Running /usr/bin/env ln -s /home/releases/20170214192051 /home/releases/current as root@46.101.23.88
+ DEBUG [34c3ff98] Command: /usr/bin/env ln -s /home/releases/20170214192051 /home/releases/current
+  INFO [34c3ff98] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [b3171900] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [b3171900] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [b3171900] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [48987345] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [48987345] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [48987345] 	20170214191506	20170214192051
+ DEBUG [48987345] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [c2853580] Running /usr/bin/env rm -rf /home/releases/20170214191506 as root@46.101.23.88
+ DEBUG [c2853580] Command: /usr/bin/env rm -rf /home/releases/20170214191506
+  INFO [c2853580] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [df8a84b2] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [df8a84b2] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [df8a84b2] Finished in 0.138 seconds with exit status 0 (successful).
+  INFO [50efbbce] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192051 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [50efbbce] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192051 by romain" >> /home/revisions.log
+  INFO [50efbbce] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:21:14 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3320585a] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [3320585a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3320585a] Finished in 1.558 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [56158dcb] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [56158dcb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [56158dcb] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [c3c4f01a] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [c3c4f01a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [c3c4f01a] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [c3c4f01a] Finished in 3.894 seconds with exit status 0 (successful).
+  INFO [f4d8ff59] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [f4d8ff59] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [f4d8ff59] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [75f308ef] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [75f308ef] Command: [ -f /home/current/REVISION ]
+ DEBUG [75f308ef] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [5782ef01] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [5782ef01] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [5782ef01] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [5782ef01] Finished in 0.123 seconds with exit status 0 (successful).
+ DEBUG [4d925f49] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [4d925f49] Command: [ -f /home/repo/HEAD ]
+ DEBUG [4d925f49] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [6ecaba4c] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [6ecaba4c] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [6ecaba4c] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [3a7d3fdc] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [3a7d3fdc] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [3a7d3fdc] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [a236b090] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [a236b090] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a236b090] 	Fetching origin
+  INFO [a236b090] Finished in 2.032 seconds with exit status 0 (successful).
+ DEBUG [7f668809] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [7f668809] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [7f668809] Finished in 0.176 seconds with exit status 0 (successful).
+  INFO [befc5401] Running /usr/bin/env mkdir -p /home/releases/20170214192122 as root@46.101.23.88
+ DEBUG [befc5401] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214192122 )
+  INFO [befc5401] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [d628ab5a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192122 as root@46.101.23.88
+ DEBUG [d628ab5a] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192122 )
+  INFO [d628ab5a] Finished in 0.937 seconds with exit status 0 (successful).
+ DEBUG [26dab769] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [26dab769] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [26dab769] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [14b92b26] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [14b92b26] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [14b92b26] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [14b92b26] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [d29ad20e] Running if test ! -d /home/releases/20170214192122; then echo "Directory does not exist '/home/releases/20170214192122'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [d29ad20e] Command: if test ! -d /home/releases/20170214192122; then echo "Directory does not exist '/home/releases/20170214192122'" 1>&2; false; fi
+ DEBUG [d29ad20e] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO [1fdc99b5] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [1fdc99b5] Command: cd /home/releases/20170214192122 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [1fdc99b5] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [efda3ad6] Running if test ! -d /home/releases/20170214192122; then echo "Directory does not exist '/home/releases/20170214192122'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [efda3ad6] Command: if test ! -d /home/releases/20170214192122; then echo "Directory does not exist '/home/releases/20170214192122'" 1>&2; false; fi
+ DEBUG [efda3ad6] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [5e328b2c] Running /usr/bin/env docker stop jenkins as root@46.101.23.88
+ DEBUG [5e328b2c] Command: cd /home/releases/20170214192122 && /usr/bin/env docker stop jenkins
+ DEBUG [5e328b2c] 	Error response from daemon: No such container: jenkins
+  INFO [5e328b2c] Finished in 0.157 seconds with exit status 1 (failed).
+  INFO [8b24b152] Running /usr/bin/env docker rm jenkins as root@46.101.23.88
+ DEBUG [8b24b152] Command: cd /home/releases/20170214192122 && /usr/bin/env docker rm jenkins
+ DEBUG [8b24b152] 	Error response from daemon: No such container: jenkins
+  INFO [8b24b152] Finished in 0.133 seconds with exit status 1 (failed).
+  INFO [14f51022] Running /usr/bin/env docker-compose up --build -d jenkins as root@46.101.23.88
+ DEBUG [14f51022] Command: cd /home/releases/20170214192122 && /usr/bin/env docker-compose up --build -d jenkins
+ DEBUG [14f51022] 	Creating network "20170214192122_default" with the default driver
+ DEBUG [14f51022] 	Building jenkins
+ DEBUG [14f51022] 	Step 1 : FROM iliyan/jenkins-ci-php:latest
+ DEBUG [14f51022] 	 ---> d08f22725b88
+ DEBUG [14f51022] 	Successfully built d08f22725b88
+ DEBUG [14f51022] 	Creating jenkins
+  INFO [14f51022] Finished in 3.288 seconds with exit status 0 (successful).
+  INFO [635ba205] Running /usr/bin/env ln -s /home/releases/20170214192122 /home/releases/current as root@46.101.23.88
+ DEBUG [635ba205] Command: /usr/bin/env ln -s /home/releases/20170214192122 /home/releases/current
+  INFO [635ba205] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [c1e73d4c] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [c1e73d4c] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [c1e73d4c] Finished in 0.133 seconds with exit status 0 (successful).
+ DEBUG [943261a5] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [943261a5] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [943261a5] 	20170214192051	20170214192122
+ DEBUG [943261a5] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [e87f8f46] Running /usr/bin/env rm -rf /home/releases/20170214192051 as root@46.101.23.88
+ DEBUG [e87f8f46] Command: /usr/bin/env rm -rf /home/releases/20170214192051
+  INFO [e87f8f46] Finished in 0.208 seconds with exit status 0 (successful).
+ DEBUG [e30b806f] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e30b806f] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [e30b806f] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [036d80fc] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192122 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [036d80fc] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192122 by romain" >> /home/revisions.log
+  INFO [036d80fc] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:22:28 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [edc6c0d9] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [edc6c0d9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [edc6c0d9] Finished in 15.360 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [1cb7c4e7] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [1cb7c4e7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [1cb7c4e7] Finished in 0.129 seconds with exit status 0 (successful).
+  INFO [4b27fecf] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [4b27fecf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [4b27fecf] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [4b27fecf] Finished in 3.369 seconds with exit status 0 (successful).
+  INFO [6953127f] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [6953127f] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [6953127f] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [61c9a4df] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [61c9a4df] Command: [ -f /home/current/REVISION ]
+ DEBUG [61c9a4df] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [da915106] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [da915106] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [da915106] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [da915106] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [bc05c44c] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [bc05c44c] Command: [ -f /home/repo/HEAD ]
+ DEBUG [bc05c44c] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [e5460887] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e5460887] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [e5460887] Finished in 0.125 seconds with exit status 0 (successful).
+  INFO [3d58c7bb] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [3d58c7bb] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [3d58c7bb] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [19d05a95] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [19d05a95] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [19d05a95] 	Fetching origin
+  INFO [19d05a95] Finished in 1.993 seconds with exit status 0 (successful).
+ DEBUG [b73ea1ef] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b73ea1ef] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [b73ea1ef] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [8a0e382f] Running /usr/bin/env mkdir -p /home/releases/20170214192249 as root@46.101.23.88
+ DEBUG [8a0e382f] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214192249 )
+  INFO [8a0e382f] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [d8b615ce] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192249 as root@46.101.23.88
+ DEBUG [d8b615ce] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192249 )
+  INFO [d8b615ce] Finished in 0.938 seconds with exit status 0 (successful).
+ DEBUG [d6ac2012] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [d6ac2012] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [d6ac2012] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [e416115a] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [e416115a] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e416115a] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [e416115a] Finished in 0.126 seconds with exit status 0 (successful).
+ DEBUG [34286b5b] Running if test ! -d /home/releases/20170214192249; then echo "Directory does not exist '/home/releases/20170214192249'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [34286b5b] Command: if test ! -d /home/releases/20170214192249; then echo "Directory does not exist '/home/releases/20170214192249'" 1>&2; false; fi
+ DEBUG [34286b5b] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [98a2b49b] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [98a2b49b] Command: cd /home/releases/20170214192249 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [98a2b49b] Finished in 0.129 seconds with exit status 0 (successful).
+ DEBUG [b879520c] Running if test ! -d /home/releases/20170214192249; then echo "Directory does not exist '/home/releases/20170214192249'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [b879520c] Command: if test ! -d /home/releases/20170214192249; then echo "Directory does not exist '/home/releases/20170214192249'" 1>&2; false; fi
+ DEBUG [b879520c] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [6da2f02a] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [6da2f02a] Command: cd /home/releases/20170214192249 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [6da2f02a] 	sh: 0: getcwd() failed: No such file or directory
+ DEBUG [6da2f02a] 	Composer could not find a composer.json file in 
+To initialize a project, please create a composer.json file as described in the https://getcomposer.org/ "Getting Started" section
+  INFO [6da2f02a] Finished in 0.861 seconds with exit status 1 (failed).
+  INFO [cf3182da] Running /usr/bin/env ln -s /home/releases/20170214192249 /home/releases/current as root@46.101.23.88
+ DEBUG [cf3182da] Command: /usr/bin/env ln -s /home/releases/20170214192249 /home/releases/current
+  INFO [cf3182da] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [fd06cd15] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [fd06cd15] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [fd06cd15] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [6131da89] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [6131da89] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [6131da89] 	20170214192122	20170214192249
+ DEBUG [6131da89] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [f5ccb846] Running /usr/bin/env rm -rf /home/releases/20170214192122 as root@46.101.23.88
+ DEBUG [f5ccb846] Command: /usr/bin/env rm -rf /home/releases/20170214192122
+  INFO [f5ccb846] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [2867ce7b] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [2867ce7b] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [2867ce7b] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [e50169f1] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192249 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [e50169f1] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192249 by romain" >> /home/revisions.log
+  INFO [e50169f1] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:27:21 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [61438a52] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [61438a52] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:28:35 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7638ca26] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [7638ca26] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:28:57 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f4344214] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [f4344214] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f4344214] Finished in 1.897 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [65b9b025] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [65b9b025] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [65b9b025] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [dcc8c1e3] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [dcc8c1e3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [dcc8c1e3] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [dcc8c1e3] Finished in 3.362 seconds with exit status 0 (successful).
+  INFO [933e1f89] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [933e1f89] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [933e1f89] Finished in 0.176 seconds with exit status 0 (successful).
+ DEBUG [9e5bfcdd] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [9e5bfcdd] Command: [ -f /home/current/REVISION ]
+ DEBUG [9e5bfcdd] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [07928726] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [07928726] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [07928726] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [07928726] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [cd6261d6] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [cd6261d6] Command: [ -f /home/repo/HEAD ]
+ DEBUG [cd6261d6] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [e5257da8] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e5257da8] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [e5257da8] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [2bb45687] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [2bb45687] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [2bb45687] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [ad8904d3] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [ad8904d3] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ad8904d3] 	Fetching origin
+  INFO [ad8904d3] Finished in 1.637 seconds with exit status 0 (successful).
+ DEBUG [11936ad8] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [11936ad8] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [11936ad8] Finished in 0.173 seconds with exit status 0 (successful).
+  INFO [8b8a171f] Running /usr/bin/env mkdir -p /home/releases/20170214192904 as root@46.101.23.88
+ DEBUG [8b8a171f] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214192904 )
+  INFO [8b8a171f] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [2e1236bf] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192904 as root@46.101.23.88
+ DEBUG [2e1236bf] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214192904 )
+  INFO [2e1236bf] Finished in 1.000 seconds with exit status 0 (successful).
+ DEBUG [2b913d12] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [2b913d12] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [2b913d12] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [0e6975a4] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [0e6975a4] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [0e6975a4] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [0e6975a4] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [27ba5c15] Running if test ! -d /home/releases/20170214192904; then echo "Directory does not exist '/home/releases/20170214192904'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [27ba5c15] Command: if test ! -d /home/releases/20170214192904; then echo "Directory does not exist '/home/releases/20170214192904'" 1>&2; false; fi
+ DEBUG [27ba5c15] Finished in 0.136 seconds with exit status 0 (successful).
+  INFO [d7b53912] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [d7b53912] Command: cd /home/releases/20170214192904 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [d7b53912] Finished in 0.131 seconds with exit status 0 (successful).
+ DEBUG [09d36405] Running if test ! -d /home/releases/20170214192904; then echo "Directory does not exist '/home/releases/20170214192904'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [09d36405] Command: if test ! -d /home/releases/20170214192904; then echo "Directory does not exist '/home/releases/20170214192904'" 1>&2; false; fi
+ DEBUG [09d36405] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [ffde6498] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [ffde6498] Command: cd /home/releases/20170214192904 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [ffde6498] 	sh: 0: getcwd() failed: No such file or directory
+ DEBUG [ffde6498] 	Composer could not find a composer.json file in 
+To initialize a project, please create a composer.json file as described in the https://getcomposer.org/ "Getting Started" section
+  INFO [ffde6498] Finished in 0.473 seconds with exit status 1 (failed).
+  INFO [e6e40067] Running /usr/bin/env ln -s /home/releases/20170214192904 /home/releases/current as root@46.101.23.88
+ DEBUG [e6e40067] Command: /usr/bin/env ln -s /home/releases/20170214192904 /home/releases/current
+  INFO [e6e40067] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO [2dd61601] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [2dd61601] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [2dd61601] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [365940a6] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [365940a6] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [365940a6] 	20170214192249	20170214192904
+ DEBUG [365940a6] Finished in 0.141 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [eee93c0e] Running /usr/bin/env rm -rf /home/releases/20170214192249 as root@46.101.23.88
+ DEBUG [eee93c0e] Command: /usr/bin/env rm -rf /home/releases/20170214192249
+  INFO [eee93c0e] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [48526ad7] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [48526ad7] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [48526ad7] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [8418a343] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192904 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [8418a343] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214192904 by romain" >> /home/revisions.log
+  INFO [8418a343] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:30:15 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cd6caa9c] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [cd6caa9c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cd6caa9c] Finished in 1.645 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-production-romain.sh 100.0%
+  INFO [ed661901] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh as root@46.101.23.88
+ DEBUG [ed661901] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-production-romain.sh
+  INFO [ed661901] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [57e4e756] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [57e4e756] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [57e4e756] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [57e4e756] Finished in 4.239 seconds with exit status 0 (successful).
+  INFO [f0a19c3f] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [f0a19c3f] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [f0a19c3f] Finished in 0.172 seconds with exit status 0 (successful).
+ DEBUG [4ffede57] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [4ffede57] Command: [ -f /home/current/REVISION ]
+ DEBUG [4ffede57] Finished in 0.119 seconds with exit status 0 (successful).
+ DEBUG [f76a70d1] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [f76a70d1] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [f76a70d1] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [f76a70d1] Finished in 0.115 seconds with exit status 0 (successful).
+ DEBUG [d39920c3] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [d39920c3] Command: [ -f /home/repo/HEAD ]
+ DEBUG [d39920c3] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [038cc55c] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [038cc55c] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [038cc55c] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [3ab236c2] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [3ab236c2] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [3ab236c2] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [6f7dd76e] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [6f7dd76e] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6f7dd76e] 	Fetching origin
+  INFO [6f7dd76e] Finished in 1.988 seconds with exit status 0 (successful).
+ DEBUG [13781eb1] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [13781eb1] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [13781eb1] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [b6495c9c] Running /usr/bin/env mkdir -p /home/releases/20170214193023 as root@46.101.23.88
+ DEBUG [b6495c9c] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214193023 )
+  INFO [b6495c9c] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [e6bba5bf] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214193023 as root@46.101.23.88
+ DEBUG [e6bba5bf] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214193023 )
+  INFO [e6bba5bf] Finished in 0.935 seconds with exit status 0 (successful).
+ DEBUG [cba62e00] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [cba62e00] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [cba62e00] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [04f9690d] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [04f9690d] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-production-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [04f9690d] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [04f9690d] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [f62d623b] Running if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [f62d623b] Command: if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi
+ DEBUG [f62d623b] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [55328326] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [55328326] Command: cd /home/releases/20170214193023 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [55328326] Finished in 0.123 seconds with exit status 0 (successful).
+ DEBUG [329a1bbe] Running if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [329a1bbe] Command: if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi
+ DEBUG [329a1bbe] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [d6c8e4c8] Running /usr/bin/env docker stop workspace as root@46.101.23.88
+ DEBUG [d6c8e4c8] Command: cd /home/releases/20170214193023 && /usr/bin/env docker stop workspace
+ DEBUG [d6c8e4c8] 	workspace
+  INFO [d6c8e4c8] Finished in 0.634 seconds with exit status 0 (successful).
+  INFO [dc121474] Running /usr/bin/env docker rm workspace as root@46.101.23.88
+ DEBUG [dc121474] Command: cd /home/releases/20170214193023 && /usr/bin/env docker rm workspace
+ DEBUG [dc121474] 	workspace
+  INFO [dc121474] Finished in 0.176 seconds with exit status 0 (successful).
+  INFO [daa19dcd] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [daa19dcd] Command: cd /home/releases/20170214193023 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [daa19dcd] 	Creating network "20170214193023_default" with the default driver
+ DEBUG [daa19dcd] 	Building workspace
+ DEBUG [daa19dcd] 	Step 1 : FROM laradock/workspace:1.3
+ DEBUG [daa19dcd] 	 ---> 4973a22e69b6
+ DEBUG [daa19dcd] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 4f464f9e5967
+ DEBUG [daa19dcd] 	Step 3 : ARG PUID=1000
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> c7e386d7105b
+ DEBUG [daa19dcd] 	Step 4 : ARG PGID=1000
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 93ab1bb060f4
+ DEBUG [daa19dcd] 	Step 5 : RUN groupadd -g $PGID laradock &&     useradd -u $PUID -g laradock -m laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 2e260a028a3f
+ DEBUG [daa19dcd] 	Step 6 : ARG TZ=UTC
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> fc71d9ac5e6a
+ DEBUG [daa19dcd] 	Step 7 : ENV TZ ${TZ}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 306b835d6f4e
+ DEBUG [daa19dcd] 	Step 8 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> f9147e16972d
+ DEBUG [daa19dcd] 	Step 9 : COPY ./composer.json /home/laradock/.composer/composer.json
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> c7ba7430cec8
+ DEBUG [daa19dcd] 	Step 10 : RUN chown -R laradock:laradock /home/laradock/.composer
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 28c2e53fb0b0
+ DEBUG [daa19dcd] 	Step 11 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 462b48dc22ad
+ DEBUG [daa19dcd] 	Step 12 : ARG COMPOSER_GLOBAL_INSTALL=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> b93252a8f0f3
+ DEBUG [daa19dcd] 	Step 13 : ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 04e105f14ea2
+ DEBUG [daa19dcd] 	Step 14 : RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then     composer global install ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0bcc7e84197a
+ DEBUG [daa19dcd] 	Step 15 : RUN echo "" >> ~/.bashrc && echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 3fc04ed7736f
+ DEBUG [daa19dcd] 	Step 16 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> efd219c64951
+ DEBUG [daa19dcd] 	Step 17 : COPY ./crontab /etc/cron.d
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 3c7f0a3d009f
+ DEBUG [daa19dcd] 	Step 18 : RUN chmod -R 644 /etc/cron.d
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 41168a54e8c1
+ DEBUG [daa19dcd] 	Step 19 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> c3ea3adb45b7
+ DEBUG [daa19dcd] 	Step 20 : COPY ./aliases.sh /home/laradock/aliases.sh
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> c47dda318e7a
+ DEBUG [daa19dcd] 	Step 21 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 4a7932fd1a19
+ DEBUG [daa19dcd] 	Step 22 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 1f3e47a7be8c
+ DEBUG [daa19dcd] 	Step 23 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 1f9ecf4bb7fd
+ DEBUG [daa19dcd] 	Step 24 : ARG INSTALL_XDEBUG=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> dcbfc6c450f8
+ DEBUG [daa19dcd] 	Step 25 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     apt-get update &&     apt-get install -y --force-yes php7.0-xdebug &&     sed -i 's/^/;/g' /etc/php/7.0/cli/conf.d/20-xdebug.ini &&     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> fa7fc8454bbc
+ DEBUG [daa19dcd] 	Step 26 : COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 000dd0e656ed
+ DEBUG [daa19dcd] 	Step 27 : ARG INSTALL_WORKSPACE_SSH=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 9fd440e475ce
+ DEBUG [daa19dcd] 	Step 28 : ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 951bb166c0b1
+ DEBUG [daa19dcd] 	Step 29 : ADD insecure_id_rsa /tmp/id_rsa
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 3c1548c75321
+ DEBUG [daa19dcd] 	Step 30 : ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 18ee1261c16c
+ DEBUG [daa19dcd] 	Step 31 : RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then     rm -f /etc/service/sshd/down &&     cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys         && cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub         && cat /tmp/id_rsa >> /root/.ssh/id_rsa         && rm -f /tmp/id_rsa*         && chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub     && chmod 400 /root/.ssh/id_rsa ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0036ed5ab5a1
+ DEBUG [daa19dcd] 	Step 32 : ARG INSTALL_MONGO=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 611c383e56d9
+ DEBUG [daa19dcd] 	Step 33 : ENV INSTALL_MONGO ${INSTALL_MONGO}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 23ecf90384e0
+ DEBUG [daa19dcd] 	Step 34 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     echo "extension=mongodb.so" >> /etc/php/7.0/cli/conf.d/30-mongodb.ini ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> aca5c7200f7a
+ DEBUG [daa19dcd] 	Step 35 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 59ca3d1e1dc5
+ DEBUG [daa19dcd] 	Step 36 : ENV DRUSH_VERSION 8.1.2
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 1fae8132aff3
+ DEBUG [daa19dcd] 	Step 37 : ARG INSTALL_DRUSH=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 1ee483e70a8d
+ DEBUG [daa19dcd] 	Step 38 : ENV INSTALL_DRUSH ${INSTALL_DRUSH}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 6daea4acee7e
+ DEBUG [daa19dcd] 	Step 39 : RUN if [ ${INSTALL_DRUSH} = true ]; then     curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar | bash &&     chmod +x /usr/local/bin/drush &&     drush core-status ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 2b0149e40a84
+ DEBUG [daa19dcd] 	Step 40 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 94409cb70be8
+ DEBUG [daa19dcd] 	Step 41 : ARG NODE_VERSION=stable
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 2fa7062a2622
+ DEBUG [daa19dcd] 	Step 42 : ENV NODE_VERSION ${NODE_VERSION}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0fdda801d0a1
+ DEBUG [daa19dcd] 	Step 43 : ARG INSTALL_NODE=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 5c522098dfa5
+ DEBUG [daa19dcd] 	Step 44 : ENV INSTALL_NODE ${INSTALL_NODE}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 9b4d0def7abb
+ DEBUG [daa19dcd] 	Step 45 : ENV NVM_DIR /home/laradock/.nvm
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> d31430cae685
+ DEBUG [daa19dcd] 	Step 46 : RUN if [ ${INSTALL_NODE} = true ]; then     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash &&         . $NVM_DIR/nvm.sh &&         nvm install ${NODE_VERSION} &&         nvm use ${NODE_VERSION} &&         nvm alias ${NODE_VERSION} &&         npm install -g gulp bower vue-cli ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 8cda8160e865
+ DEBUG [daa19dcd] 	Step 47 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> b8bb6fad7a8e
+ DEBUG [daa19dcd] 	Step 48 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> c36f1b44abe7
+ DEBUG [daa19dcd] 	Step 49 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="/home/laradock/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 5fa8547613f5
+ DEBUG [daa19dcd] 	Step 50 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> ca2479b2cfa1
+ DEBUG [daa19dcd] 	Step 51 : ARG INSTALL_YARN=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> d81cfd2ec7aa
+ DEBUG [daa19dcd] 	Step 52 : ENV INSTALL_YARN ${INSTALL_YARN}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 55386adbfe9d
+ DEBUG [daa19dcd] 	Step 53 : ARG YARN_VERSION=latest
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 7500f8353834
+ DEBUG [daa19dcd] 	Step 54 : ENV YARN_VERSION ${YARN_VERSION}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> f3e6ccd62ce1
+ DEBUG [daa19dcd] 	Step 55 : RUN if [ ${INSTALL_YARN} = true ]; then     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&     if [ ${YARN_VERSION} = "latest" ]; then         curl -o- -L https://yarnpkg.com/install.sh | bash;     else         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION};     fi &&     echo "" >> ~/.bashrc &&     echo 'export PATH="$HOME/.yarn/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 698ea212afe7
+ DEBUG [daa19dcd] 	Step 56 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> e6c10f84b56d
+ DEBUG [daa19dcd] 	Step 57 : RUN if [ ${INSTALL_YARN} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export YARN_DIR="/home/laradock/.yarn"' >> ~/.bashrc &&     echo 'export PATH="$YARN_DIR/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 6db020cfdf0d
+ DEBUG [daa19dcd] 	Step 58 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 2814deb3214f
+ DEBUG [daa19dcd] 	Step 59 : ARG INSTALL_AEROSPIKE_EXTENSION=true
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> b77d6229ae74
+ DEBUG [daa19dcd] 	Step 60 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 9486d86e1641
+ DEBUG [daa19dcd] 	Step 61 : COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 08f64dbe9d6c
+ DEBUG [daa19dcd] 	Step 62 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> f42377ca2780
+ DEBUG [daa19dcd] 	Step 63 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then     rm /etc/php/7.0/cli/conf.d/aerospike.ini ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> fbc257b88f84
+ DEBUG [daa19dcd] 	Step 64 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> ea35e448863a
+ DEBUG [daa19dcd] 	Step 65 : ARG INSTALL_V8JS_EXTENSION=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 3efb298723e2
+ DEBUG [daa19dcd] 	Step 66 : ENV INSTALL_V8JS_EXTENSION ${INSTALL_V8JS_EXTENSION}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> f7499f661f3c
+ DEBUG [daa19dcd] 	Step 67 : RUN if [ ${INSTALL_V8JS_EXTENSION} = true ]; then     add-apt-repository -y ppa:pinepain/libv8-5.4     && apt-get update     && apt-get install -y php-dev php-pear libv8-5.4     && pecl install v8js     && echo "extension=v8js.so" >> /etc/php/7.0/cli/php.ini ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 7558b0efed93
+ DEBUG [daa19dcd] 	Step 68 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 4f63ba52fdca
+ DEBUG [daa19dcd] 	Step 69 : RUN echo "" >> ~/.bashrc &&     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> de5c6d1c1def
+ DEBUG [daa19dcd] 	Step 70 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> d4e647c7941b
+ DEBUG [daa19dcd] 	Step 71 : RUN echo "" >> ~/.bashrc &&     echo 'alias art="php artisan"' >> ~/.bashrc
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 9a5c581a91c1
+ DEBUG [daa19dcd] 	Step 72 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 5cb9882a04d3
+ DEBUG [daa19dcd] 	Step 73 : ARG INSTALL_LARAVEL_ENVOY=true
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0ec63d75e947
+ DEBUG [daa19dcd] 	Step 74 : ENV INSTALL_LARAVEL_ENVOY ${INSTALL_LARAVEL_ENVOY}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> dbfb7faebba2
+ DEBUG [daa19dcd] 	Step 75 : RUN if [ ${INSTALL_LARAVEL_ENVOY} = true ]; then     composer global require "laravel/envoy=~1.0" ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 71f9b411c7f4
+ DEBUG [daa19dcd] 	Step 76 : USER laradock
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> a3b2084c3ea3
+ DEBUG [daa19dcd] 	Step 77 : ARG INSTALL_DEPLOYER=false
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 93d6451b7b98
+ DEBUG [daa19dcd] 	Step 78 : ENV INSTALL_DEPLOYER ${INSTALL_DEPLOYER}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> ffd6bb118901
+ DEBUG [daa19dcd] 	Step 79 : RUN if [ ${INSTALL_DEPLOYER} = true ]; then     composer global require "deployer/deployer" ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0efcc376d95c
+ DEBUG [daa19dcd] 	Step 80 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 659f9f2a387d
+ DEBUG [daa19dcd] 	Step 81 : ARG INSTALL_LINUXBREW=true
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 742cae91d22f
+ DEBUG [daa19dcd] 	Step 82 : ENV INSTALL_LINUXBREW ${INSTALL_LINUXBREW}
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 8454b1b08f0d
+ DEBUG [daa19dcd] 	Step 83 : RUN if [ ${INSTALL_LINUXBREW} = true ]; then     apt-get update &&     apt-get upgrade -y &&     apt-get install -y build-essential make cmake scons curl git       ruby autoconf automake autoconf-archive       gettext libtool flex bison       libbz2-dev libcurl4-openssl-dev       libexpat-dev libncurses-dev &&     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew &&     echo "" >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc &&     echo 'export PATH="$LINUXBREWHOME/bin:$PATH"' >> ~/.bashrc &&     echo 'export MANPATH="$LINUXBREWHOME/man:$MANPATH"' >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH="$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc ;fi
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 0cb130f70981
+ DEBUG [daa19dcd] 	Step 84 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 06211b1293a9
+ DEBUG [daa19dcd] 	Step 85 : RUN apt-add-repository -y ppa:brightbox/ruby-ng  && apt-get update  && apt-get install -y       ruby$RUBY_MAJOR       ruby$RUBY_MAJOR-dev       make       imagemagick       libbz2-dev       libcurl4-openssl-dev       libevent-dev       libffi-dev       libglib2.0-dev       libjpeg-dev       libmagickcore-dev       libmagickwand-dev       libmysqlclient-dev       libncurses-dev       libpq-dev       libreadline-dev       libsqlite3-dev       libssl-dev       libxml2-dev       libxslt-dev       libyaml-dev       zlib1g-dev  && apt-add-repository -y --remove ppa:brightbox/ruby-ng  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> cf3632f3818f
+ DEBUG [daa19dcd] 	Step 86 : RUN gem install capistrano         capistrano-rvm         capistrano-rails         capistrano-bundler         capistrano-sidekiq         capistrano-passenger         capistrano-laravel         capistrano-composer         capistrano-npm         capistrano3-unicorn
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> da640ae6acc0
+ DEBUG [daa19dcd] 	Step 87 : USER root
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 92464ca9fe20
+ DEBUG [daa19dcd] 	Step 88 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 12a3d46c05f5
+ DEBUG [daa19dcd] 	Step 89 : WORKDIR /var/www
+ DEBUG [daa19dcd] 	 ---> Using cache
+ DEBUG [daa19dcd] 	 ---> 69a16169d4e5
+ DEBUG [daa19dcd] 	Successfully built 69a16169d4e5
+ DEBUG [daa19dcd] 	Creating applications
+ DEBUG [daa19dcd] 	
+ERROR: for applications  Cannot create container for service applications: Conflict. The name "/applications" is already in use by container 0fb31dbd24182f4bab9a16ff80be2859dc458eb0b0e7b279885faa1d339d8e08. You have to remove (or rename) that container to be able to reuse that name.
+Encountered errors while bringing up the project.
+  INFO [daa19dcd] Finished in 3.101 seconds with exit status 1 (failed).
+ DEBUG [15fb85fd] Running if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [15fb85fd] Command: if test ! -d /home/releases/20170214193023; then echo "Directory does not exist '/home/releases/20170214193023'" 1>&2; false; fi
+ DEBUG [15fb85fd] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [41a77222] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [41a77222] Command: cd /home/releases/20170214193023 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [41a77222] 	Error response from daemon: No such container: workspace
+  INFO [41a77222] Finished in 0.139 seconds with exit status 1 (failed).
+  INFO [26e00c2e] Running /usr/bin/env ln -s /home/releases/20170214193023 /home/releases/current as root@46.101.23.88
+ DEBUG [26e00c2e] Command: /usr/bin/env ln -s /home/releases/20170214193023 /home/releases/current
+  INFO [26e00c2e] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [7b208ce1] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [7b208ce1] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [7b208ce1] Finished in 0.130 seconds with exit status 0 (successful).
+ DEBUG [69d4b9f2] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [69d4b9f2] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [69d4b9f2] 	20170214192904	20170214193023
+ DEBUG [69d4b9f2] Finished in 0.128 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [f27ff0aa] Running /usr/bin/env rm -rf /home/releases/20170214192904 as root@46.101.23.88
+ DEBUG [f27ff0aa] Command: /usr/bin/env rm -rf /home/releases/20170214192904
+  INFO [f27ff0aa] Finished in 0.177 seconds with exit status 0 (successful).
+ DEBUG [62205d67] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [62205d67] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [62205d67] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [a906610e] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214193023 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [a906610e] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214193023 by romain" >> /home/revisions.log
+  INFO [a906610e] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:34:29 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f50f2d6e] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [f50f2d6e] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:34:37 +0100 cap production deploy_alt
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:34:52 +0100 cap production deploy_alt
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 20:35:41 +0100 cap production deploy_alt
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 21:20:17 +0100 cap light deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [31202df2] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [31202df2] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-14 22:04:29 +0100 cap light deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ed99976f] Running /usr/bin/env mkdir -p /tmp as root@46.101.23.88
+ DEBUG [ed99976f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ed99976f] Finished in 23.800 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-jenkins-sandbox-light-romain.sh 0.0%
+  INFO Uploading /tmp/git-ssh-jenkins-sandbox-light-romain.sh 100.0%
+  INFO [6d4e38fd] Running /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-light-romain.sh as root@46.101.23.88
+ DEBUG [6d4e38fd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-jenkins-sandbox-light-romain.sh
+  INFO [6d4e38fd] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [e0d4cf92] Running /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD as root@46.101.23.88
+ DEBUG [e0d4cf92] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env git ls-remote git@github.com:romaindortier/jenkins-sandbox HEAD )
+ DEBUG [e0d4cf92] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33	HEAD
+  INFO [e0d4cf92] Finished in 3.927 seconds with exit status 0 (successful).
+  INFO [c7118120] Running /usr/bin/env mkdir -p /home/shared /home/releases as root@46.101.23.88
+ DEBUG [c7118120] Command: /usr/bin/env mkdir -p /home/shared /home/releases
+  INFO [c7118120] Finished in 0.169 seconds with exit status 0 (successful).
+ DEBUG [3b3d3556] Running [ -f /home/current/REVISION ] as root@46.101.23.88
+ DEBUG [3b3d3556] Command: [ -f /home/current/REVISION ]
+ DEBUG [3b3d3556] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [1169c79f] Running /usr/bin/env cat /home/current/REVISION 2>/dev/null as root@46.101.23.88
+ DEBUG [1169c79f] Command: /usr/bin/env cat /home/current/REVISION 2>/dev/null
+ DEBUG [1169c79f] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [1169c79f] Finished in 0.117 seconds with exit status 0 (successful).
+ DEBUG [ece631bb] Running [ -f /home/repo/HEAD ] as root@46.101.23.88
+ DEBUG [ece631bb] Command: [ -f /home/repo/HEAD ]
+ DEBUG [ece631bb] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/repo
+ DEBUG [43336a78] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [43336a78] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [43336a78] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [c2db7c01] Running /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox as root@46.101.23.88
+ DEBUG [c2db7c01] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env git remote set-url origin git@github.com:romaindortier/jenkins-sandbox )
+  INFO [c2db7c01] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [8c9965c8] Running /usr/bin/env git remote update --prune as root@46.101.23.88
+ DEBUG [8c9965c8] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8c9965c8] 	Fetching origin
+  INFO [8c9965c8] Finished in 4.435 seconds with exit status 0 (successful).
+ DEBUG [e90b1f25] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [e90b1f25] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [e90b1f25] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [ac2e8415] Running /usr/bin/env mkdir -p /home/releases/20170214210500 as root@46.101.23.88
+ DEBUG [ac2e8415] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env mkdir -p /home/releases/20170214210500 )
+  INFO [ac2e8415] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [490ac83b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214210500 as root@46.101.23.88
+ DEBUG [490ac83b] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/releases/20170214210500 )
+  INFO [490ac83b] Finished in 0.763 seconds with exit status 0 (successful).
+ DEBUG [0a258ce0] Running if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [0a258ce0] Command: if test ! -d /home/repo; then echo "Directory does not exist '/home/repo'" 1>&2; false; fi
+ DEBUG [0a258ce0] Finished in 0.123 seconds with exit status 0 (successful).
+ DEBUG [a9acc89f] Running /usr/bin/env git rev-list --max-count=1 master as root@46.101.23.88
+ DEBUG [a9acc89f] Command: cd /home/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-jenkins-sandbox-light-romain.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a9acc89f] 	1f24a6f791be73db1f1f8c8ce66240ae47057a33
+ DEBUG [a9acc89f] Finished in 0.126 seconds with exit status 0 (successful).
+ DEBUG [59b0da0e] Running if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [59b0da0e] Command: if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi
+ DEBUG [59b0da0e] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [992ae03f] Running /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION as root@46.101.23.88
+ DEBUG [992ae03f] Command: cd /home/releases/20170214210500 && /usr/bin/env echo "1f24a6f791be73db1f1f8c8ce66240ae47057a33" >> REVISION
+  INFO [992ae03f] Finished in 0.118 seconds with exit status 0 (successful).
+ DEBUG [7a484626] Running if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [7a484626] Command: if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi
+ DEBUG [7a484626] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [1aead257] Running /usr/bin/env docker stop workspace as root@46.101.23.88
+ DEBUG [1aead257] Command: cd /home/releases/20170214210500 && /usr/bin/env docker stop workspace
+ DEBUG [1aead257] 	Error response from daemon: No such container: workspace
+  INFO [1aead257] Finished in 0.138 seconds with exit status 1 (failed).
+  INFO [30af6fa9] Running /usr/bin/env docker rm workspace as root@46.101.23.88
+ DEBUG [30af6fa9] Command: cd /home/releases/20170214210500 && /usr/bin/env docker rm workspace
+ DEBUG [30af6fa9] 	Error response from daemon: No such container: workspace
+  INFO [30af6fa9] Finished in 0.136 seconds with exit status 1 (failed).
+  INFO [f9ec4b53] Running /usr/bin/env docker-compose up --build -d workspace as root@46.101.23.88
+ DEBUG [f9ec4b53] Command: cd /home/releases/20170214210500 && /usr/bin/env docker-compose up --build -d workspace
+ DEBUG [f9ec4b53] 	Creating network "20170214210500_default" with the default driver
+ DEBUG [f9ec4b53] 	Building workspace
+ DEBUG [f9ec4b53] 	Step 1 : FROM laradock/workspace:1.3
+ DEBUG [f9ec4b53] 	 ---> 4973a22e69b6
+ DEBUG [f9ec4b53] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 4f464f9e5967
+ DEBUG [f9ec4b53] 	Step 3 : ARG PUID=1000
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> c7e386d7105b
+ DEBUG [f9ec4b53] 	Step 4 : ARG PGID=1000
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 93ab1bb060f4
+ DEBUG [f9ec4b53] 	Step 5 : RUN groupadd -g $PGID laradock &&     useradd -u $PUID -g laradock -m laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 2e260a028a3f
+ DEBUG [f9ec4b53] 	Step 6 : ARG TZ=UTC
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> fc71d9ac5e6a
+ DEBUG [f9ec4b53] 	Step 7 : ENV TZ ${TZ}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 306b835d6f4e
+ DEBUG [f9ec4b53] 	Step 8 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> f9147e16972d
+ DEBUG [f9ec4b53] 	Step 9 : COPY ./composer.json /home/laradock/.composer/composer.json
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> c7ba7430cec8
+ DEBUG [f9ec4b53] 	Step 10 : RUN chown -R laradock:laradock /home/laradock/.composer
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 28c2e53fb0b0
+ DEBUG [f9ec4b53] 	Step 11 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 462b48dc22ad
+ DEBUG [f9ec4b53] 	Step 12 : ARG COMPOSER_GLOBAL_INSTALL=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> b93252a8f0f3
+ DEBUG [f9ec4b53] 	Step 13 : ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 04e105f14ea2
+ DEBUG [f9ec4b53] 	Step 14 : RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then     composer global install ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0bcc7e84197a
+ DEBUG [f9ec4b53] 	Step 15 : RUN echo "" >> ~/.bashrc && echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 3fc04ed7736f
+ DEBUG [f9ec4b53] 	Step 16 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> efd219c64951
+ DEBUG [f9ec4b53] 	Step 17 : COPY ./crontab /etc/cron.d
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 3c7f0a3d009f
+ DEBUG [f9ec4b53] 	Step 18 : RUN chmod -R 644 /etc/cron.d
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 41168a54e8c1
+ DEBUG [f9ec4b53] 	Step 19 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> c3ea3adb45b7
+ DEBUG [f9ec4b53] 	Step 20 : COPY ./aliases.sh /home/laradock/aliases.sh
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> c47dda318e7a
+ DEBUG [f9ec4b53] 	Step 21 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 4a7932fd1a19
+ DEBUG [f9ec4b53] 	Step 22 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 1f3e47a7be8c
+ DEBUG [f9ec4b53] 	Step 23 : RUN echo "" >> ~/.bashrc &&     echo "# Load Custom Aliases" >> ~/.bashrc &&     echo "source /home/laradock/aliases.sh" >> ~/.bashrc &&     echo "" >> ~/.bashrc
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 1f9ecf4bb7fd
+ DEBUG [f9ec4b53] 	Step 24 : ARG INSTALL_XDEBUG=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> dcbfc6c450f8
+ DEBUG [f9ec4b53] 	Step 25 : RUN if [ ${INSTALL_XDEBUG} = true ]; then     apt-get update &&     apt-get install -y --force-yes php7.0-xdebug &&     sed -i 's/^/;/g' /etc/php/7.0/cli/conf.d/20-xdebug.ini &&     echo "alias phpunit='php -dzend_extension=xdebug.so /var/www/vendor/bin/phpunit'" >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> fa7fc8454bbc
+ DEBUG [f9ec4b53] 	Step 26 : COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 000dd0e656ed
+ DEBUG [f9ec4b53] 	Step 27 : ARG INSTALL_WORKSPACE_SSH=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 9fd440e475ce
+ DEBUG [f9ec4b53] 	Step 28 : ENV INSTALL_WORKSPACE_SSH ${INSTALL_WORKSPACE_SSH}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 951bb166c0b1
+ DEBUG [f9ec4b53] 	Step 29 : ADD insecure_id_rsa /tmp/id_rsa
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 3c1548c75321
+ DEBUG [f9ec4b53] 	Step 30 : ADD insecure_id_rsa.pub /tmp/id_rsa.pub
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 18ee1261c16c
+ DEBUG [f9ec4b53] 	Step 31 : RUN if [ ${INSTALL_WORKSPACE_SSH} = true ]; then     rm -f /etc/service/sshd/down &&     cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys         && cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub         && cat /tmp/id_rsa >> /root/.ssh/id_rsa         && rm -f /tmp/id_rsa*         && chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub     && chmod 400 /root/.ssh/id_rsa ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0036ed5ab5a1
+ DEBUG [f9ec4b53] 	Step 32 : ARG INSTALL_MONGO=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 611c383e56d9
+ DEBUG [f9ec4b53] 	Step 33 : ENV INSTALL_MONGO ${INSTALL_MONGO}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 23ecf90384e0
+ DEBUG [f9ec4b53] 	Step 34 : RUN if [ ${INSTALL_MONGO} = true ]; then     pecl install mongodb &&     echo "extension=mongodb.so" >> /etc/php/7.0/cli/conf.d/30-mongodb.ini ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> aca5c7200f7a
+ DEBUG [f9ec4b53] 	Step 35 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 59ca3d1e1dc5
+ DEBUG [f9ec4b53] 	Step 36 : ENV DRUSH_VERSION 8.1.2
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 1fae8132aff3
+ DEBUG [f9ec4b53] 	Step 37 : ARG INSTALL_DRUSH=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 1ee483e70a8d
+ DEBUG [f9ec4b53] 	Step 38 : ENV INSTALL_DRUSH ${INSTALL_DRUSH}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 6daea4acee7e
+ DEBUG [f9ec4b53] 	Step 39 : RUN if [ ${INSTALL_DRUSH} = true ]; then     curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar | bash &&     chmod +x /usr/local/bin/drush &&     drush core-status ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 2b0149e40a84
+ DEBUG [f9ec4b53] 	Step 40 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 94409cb70be8
+ DEBUG [f9ec4b53] 	Step 41 : ARG NODE_VERSION=stable
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 2fa7062a2622
+ DEBUG [f9ec4b53] 	Step 42 : ENV NODE_VERSION ${NODE_VERSION}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0fdda801d0a1
+ DEBUG [f9ec4b53] 	Step 43 : ARG INSTALL_NODE=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 5c522098dfa5
+ DEBUG [f9ec4b53] 	Step 44 : ENV INSTALL_NODE ${INSTALL_NODE}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 9b4d0def7abb
+ DEBUG [f9ec4b53] 	Step 45 : ENV NVM_DIR /home/laradock/.nvm
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> d31430cae685
+ DEBUG [f9ec4b53] 	Step 46 : RUN if [ ${INSTALL_NODE} = true ]; then     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash &&         . $NVM_DIR/nvm.sh &&         nvm install ${NODE_VERSION} &&         nvm use ${NODE_VERSION} &&         nvm alias ${NODE_VERSION} &&         npm install -g gulp bower vue-cli ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 8cda8160e865
+ DEBUG [f9ec4b53] 	Step 47 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> b8bb6fad7a8e
+ DEBUG [f9ec4b53] 	Step 48 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> c36f1b44abe7
+ DEBUG [f9ec4b53] 	Step 49 : RUN if [ ${INSTALL_NODE} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export NVM_DIR="/home/laradock/.nvm"' >> ~/.bashrc &&     echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 5fa8547613f5
+ DEBUG [f9ec4b53] 	Step 50 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> ca2479b2cfa1
+ DEBUG [f9ec4b53] 	Step 51 : ARG INSTALL_YARN=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> d81cfd2ec7aa
+ DEBUG [f9ec4b53] 	Step 52 : ENV INSTALL_YARN ${INSTALL_YARN}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 55386adbfe9d
+ DEBUG [f9ec4b53] 	Step 53 : ARG YARN_VERSION=latest
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 7500f8353834
+ DEBUG [f9ec4b53] 	Step 54 : ENV YARN_VERSION ${YARN_VERSION}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> f3e6ccd62ce1
+ DEBUG [f9ec4b53] 	Step 55 : RUN if [ ${INSTALL_YARN} = true ]; then     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&     if [ ${YARN_VERSION} = "latest" ]; then         curl -o- -L https://yarnpkg.com/install.sh | bash;     else         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION};     fi &&     echo "" >> ~/.bashrc &&     echo 'export PATH="$HOME/.yarn/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 698ea212afe7
+ DEBUG [f9ec4b53] 	Step 56 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> e6c10f84b56d
+ DEBUG [f9ec4b53] 	Step 57 : RUN if [ ${INSTALL_YARN} = true ]; then     echo "" >> ~/.bashrc &&     echo 'export YARN_DIR="/home/laradock/.yarn"' >> ~/.bashrc &&     echo 'export PATH="$YARN_DIR/bin:$PATH"' >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 6db020cfdf0d
+ DEBUG [f9ec4b53] 	Step 58 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 2814deb3214f
+ DEBUG [f9ec4b53] 	Step 59 : ARG INSTALL_AEROSPIKE_EXTENSION=true
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> b77d6229ae74
+ DEBUG [f9ec4b53] 	Step 60 : ENV INSTALL_AEROSPIKE_EXTENSION ${INSTALL_AEROSPIKE_EXTENSION}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 9486d86e1641
+ DEBUG [f9ec4b53] 	Step 61 : COPY ./aerospike.ini /etc/php/7.0/cli/conf.d/aerospike.ini
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 08f64dbe9d6c
+ DEBUG [f9ec4b53] 	Step 62 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = true ]; then     curl -L -o /tmp/aerospike-client-php.tar.gz "https://github.com/luciano-jr/aerospike-client-php/archive/master.tar.gz"     && mkdir -p aerospike-client-php     && tar -C aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1     && (         cd aerospike-client-php/src/aerospike         && phpize         && ./build.sh         && make install     )     && rm /tmp/aerospike-client-php.tar.gz ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> f42377ca2780
+ DEBUG [f9ec4b53] 	Step 63 : RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then     rm /etc/php/7.0/cli/conf.d/aerospike.ini ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> fbc257b88f84
+ DEBUG [f9ec4b53] 	Step 64 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> ea35e448863a
+ DEBUG [f9ec4b53] 	Step 65 : ARG INSTALL_V8JS_EXTENSION=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 3efb298723e2
+ DEBUG [f9ec4b53] 	Step 66 : ENV INSTALL_V8JS_EXTENSION ${INSTALL_V8JS_EXTENSION}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> f7499f661f3c
+ DEBUG [f9ec4b53] 	Step 67 : RUN if [ ${INSTALL_V8JS_EXTENSION} = true ]; then     add-apt-repository -y ppa:pinepain/libv8-5.4     && apt-get update     && apt-get install -y php-dev php-pear libv8-5.4     && pecl install v8js     && echo "extension=v8js.so" >> /etc/php/7.0/cli/php.ini ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 7558b0efed93
+ DEBUG [f9ec4b53] 	Step 68 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 4f63ba52fdca
+ DEBUG [f9ec4b53] 	Step 69 : RUN echo "" >> ~/.bashrc &&     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> de5c6d1c1def
+ DEBUG [f9ec4b53] 	Step 70 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> d4e647c7941b
+ DEBUG [f9ec4b53] 	Step 71 : RUN echo "" >> ~/.bashrc &&     echo 'alias art="php artisan"' >> ~/.bashrc
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 9a5c581a91c1
+ DEBUG [f9ec4b53] 	Step 72 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 5cb9882a04d3
+ DEBUG [f9ec4b53] 	Step 73 : ARG INSTALL_LARAVEL_ENVOY=true
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0ec63d75e947
+ DEBUG [f9ec4b53] 	Step 74 : ENV INSTALL_LARAVEL_ENVOY ${INSTALL_LARAVEL_ENVOY}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> dbfb7faebba2
+ DEBUG [f9ec4b53] 	Step 75 : RUN if [ ${INSTALL_LARAVEL_ENVOY} = true ]; then     composer global require "laravel/envoy=~1.0" ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 71f9b411c7f4
+ DEBUG [f9ec4b53] 	Step 76 : USER laradock
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> a3b2084c3ea3
+ DEBUG [f9ec4b53] 	Step 77 : ARG INSTALL_DEPLOYER=false
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 93d6451b7b98
+ DEBUG [f9ec4b53] 	Step 78 : ENV INSTALL_DEPLOYER ${INSTALL_DEPLOYER}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> ffd6bb118901
+ DEBUG [f9ec4b53] 	Step 79 : RUN if [ ${INSTALL_DEPLOYER} = true ]; then     composer global require "deployer/deployer" ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0efcc376d95c
+ DEBUG [f9ec4b53] 	Step 80 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 659f9f2a387d
+ DEBUG [f9ec4b53] 	Step 81 : ARG INSTALL_LINUXBREW=true
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 742cae91d22f
+ DEBUG [f9ec4b53] 	Step 82 : ENV INSTALL_LINUXBREW ${INSTALL_LINUXBREW}
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 8454b1b08f0d
+ DEBUG [f9ec4b53] 	Step 83 : RUN if [ ${INSTALL_LINUXBREW} = true ]; then     apt-get update &&     apt-get upgrade -y &&     apt-get install -y build-essential make cmake scons curl git       ruby autoconf automake autoconf-archive       gettext libtool flex bison       libbz2-dev libcurl4-openssl-dev       libexpat-dev libncurses-dev &&     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew &&     echo "" >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc &&     echo 'export PATH="$LINUXBREWHOME/bin:$PATH"' >> ~/.bashrc &&     echo 'export MANPATH="$LINUXBREWHOME/man:$MANPATH"' >> ~/.bashrc &&     echo 'export PKG_CONFIG_PATH="$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc &&     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc ;fi
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 0cb130f70981
+ DEBUG [f9ec4b53] 	Step 84 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 06211b1293a9
+ DEBUG [f9ec4b53] 	Step 85 : RUN apt-add-repository -y ppa:brightbox/ruby-ng  && apt-get update  && apt-get install -y       ruby$RUBY_MAJOR       ruby$RUBY_MAJOR-dev       make       imagemagick       libbz2-dev       libcurl4-openssl-dev       libevent-dev       libffi-dev       libglib2.0-dev       libjpeg-dev       libmagickcore-dev       libmagickwand-dev       libmysqlclient-dev       libncurses-dev       libpq-dev       libreadline-dev       libsqlite3-dev       libssl-dev       libxml2-dev       libxslt-dev       libyaml-dev       zlib1g-dev  && apt-add-repository -y --remove ppa:brightbox/ruby-ng  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> cf3632f3818f
+ DEBUG [f9ec4b53] 	Step 86 : RUN gem install capistrano         capistrano-rvm         capistrano-rails         capistrano-bundler         capistrano-sidekiq         capistrano-passenger         capistrano-laravel         capistrano-composer         capistrano-npm         capistrano3-unicorn
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> da640ae6acc0
+ DEBUG [f9ec4b53] 	Step 87 : USER root
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 92464ca9fe20
+ DEBUG [f9ec4b53] 	Step 88 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 12a3d46c05f5
+ DEBUG [f9ec4b53] 	Step 89 : WORKDIR /var/www
+ DEBUG [f9ec4b53] 	 ---> Using cache
+ DEBUG [f9ec4b53] 	 ---> 69a16169d4e5
+ DEBUG [f9ec4b53] 	Successfully built 69a16169d4e5
+ DEBUG [f9ec4b53] 	Creating applications
+ DEBUG [f9ec4b53] 	
+ERROR: for applications  Cannot create container for service applications: Conflict. The name "/applications" is already in use by container 0fb31dbd24182f4bab9a16ff80be2859dc458eb0b0e7b279885faa1d339d8e08. You have to remove (or rename) that container to be able to reuse that name.
+Encountered errors while bringing up the project.
+  INFO [f9ec4b53] Finished in 2.797 seconds with exit status 1 (failed).
+ DEBUG [162b8879] Running if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [162b8879] Command: if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi
+ DEBUG [162b8879] Finished in 0.124 seconds with exit status 0 (successful).
+  INFO [52a5d0d8] Running /usr/bin/env docker stop mysql as root@46.101.23.88
+ DEBUG [52a5d0d8] Command: cd /home/releases/20170214210500 && /usr/bin/env docker stop mysql
+ DEBUG [52a5d0d8] 	Error response from daemon: No such container: mysql
+  INFO [52a5d0d8] Finished in 0.148 seconds with exit status 1 (failed).
+  INFO [78715bd7] Running /usr/bin/env docker rm mysql as root@46.101.23.88
+ DEBUG [78715bd7] Command: cd /home/releases/20170214210500 && /usr/bin/env docker rm mysql
+ DEBUG [78715bd7] 	Error response from daemon: No such container: mysql
+  INFO [78715bd7] Finished in 0.145 seconds with exit status 1 (failed).
+  INFO [fa81ce07] Running /usr/bin/env docker-compose up --build -d mysql as root@46.101.23.88
+ DEBUG [fa81ce07] Command: cd /home/releases/20170214210500 && /usr/bin/env docker-compose up --build -d mysql
+ DEBUG [fa81ce07] 	Building mysql
+ DEBUG [fa81ce07] 	Step 1 : FROM mysql:5.7
+ DEBUG [fa81ce07] 	 ---> 7666f75adb6b
+ DEBUG [fa81ce07] 	Step 2 : MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> dfb414149f54
+ DEBUG [fa81ce07] 	Step 3 : ADD startup /etc/mysql/startup
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> ef91b7e33696
+ DEBUG [fa81ce07] 	Step 4 : RUN chown -R mysql:root /var/lib/mysql/
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 6cff4c03def2
+ DEBUG [fa81ce07] 	Step 5 : ARG MYSQL_DATABASE=homestead
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> acbf772ac982
+ DEBUG [fa81ce07] 	Step 6 : ARG MYSQL_USER=homestead
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 6f940e938428
+ DEBUG [fa81ce07] 	Step 7 : ARG MYSQL_PASSWORD=secret
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 2edbf6a6c489
+ DEBUG [fa81ce07] 	Step 8 : ARG MYSQL_ROOT_PASSWORD=root
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 61a0ace664fb
+ DEBUG [fa81ce07] 	Step 9 : ENV MYSQL_DATABASE $MYSQL_DATABASE
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 6d5e48cfb52b
+ DEBUG [fa81ce07] 	Step 10 : ENV MYSQL_USER $MYSQL_USER
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> eff08f0a122c
+ DEBUG [fa81ce07] 	Step 11 : ENV MYSQL_PASSWORD $MYSQL_PASSWORD
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> a15014382717
+ DEBUG [fa81ce07] 	Step 12 : ENV MYSQL_ROOT_PASSWORD $MYSQL_ROOT_PASSWORD
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> cdbb421824fe
+ DEBUG [fa81ce07] 	Step 13 : RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /etc/mysql/startup &&     sed -i 's/MYSQL_USER/'$MYSQL_USER'/g' /etc/mysql/startup &&     sed -i 's/MYSQL_PASSWORD/'$MYSQL_PASSWORD'/g' /etc/mysql/startup
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 2d994847688b
+ DEBUG [fa81ce07] 	Step 14 : ADD my.cnf /etc/mysql/conf.d/my.cnf
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 34038ea46f8e
+ DEBUG [fa81ce07] 	Step 15 : CMD mysqld --init-file=/etc/mysql/startup
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 55f8aa216b1e
+ DEBUG [fa81ce07] 	Step 16 : EXPOSE 3306
+ DEBUG [fa81ce07] 	 ---> Using cache
+ DEBUG [fa81ce07] 	 ---> 0bea1598c4cc
+ DEBUG [fa81ce07] 	Successfully built 0bea1598c4cc
+ DEBUG [fa81ce07] 	Creating mysql
+  INFO [fa81ce07] Finished in 2.825 seconds with exit status 0 (successful).
+ DEBUG [0d3200a1] Running if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [0d3200a1] Command: if test ! -d /home/releases/20170214210500; then echo "Directory does not exist '/home/releases/20170214210500'" 1>&2; false; fi
+ DEBUG [0d3200a1] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [07cea859] Running /usr/bin/env docker exec -u www-data -i workspace composer install as root@46.101.23.88
+ DEBUG [07cea859] Command: cd /home/releases/20170214210500 && /usr/bin/env docker exec -u www-data -i workspace composer install
+ DEBUG [07cea859] 	Error response from daemon: No such container: workspace
+  INFO [07cea859] Finished in 0.193 seconds with exit status 1 (failed).
+  INFO [0a423d54] Running /usr/bin/env ln -s /home/releases/20170214210500 /home/releases/current as root@46.101.23.88
+ DEBUG [0a423d54] Command: /usr/bin/env ln -s /home/releases/20170214210500 /home/releases/current
+  INFO [0a423d54] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [a34ab264] Running /usr/bin/env mv /home/releases/current /home as root@46.101.23.88
+ DEBUG [a34ab264] Command: /usr/bin/env mv /home/releases/current /home
+  INFO [a34ab264] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG [967ddfa5] Running /usr/bin/env ls -x /home/releases as root@46.101.23.88
+ DEBUG [967ddfa5] Command: /usr/bin/env ls -x /home/releases
+ DEBUG [967ddfa5] 	20170214193023	20170214210500
+ DEBUG [967ddfa5] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO Keeping 1 of 2 deployed releases on 46.101.23.88
+  INFO [10aa28e8] Running /usr/bin/env rm -rf /home/releases/20170214193023 as root@46.101.23.88
+ DEBUG [10aa28e8] Command: /usr/bin/env rm -rf /home/releases/20170214193023
+  INFO [10aa28e8] Finished in 0.523 seconds with exit status 0 (successful).
+ DEBUG [462baf04] Running if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi as root@46.101.23.88
+ DEBUG [462baf04] Command: if test ! -d /home/releases; then echo "Directory does not exist '/home/releases'" 1>&2; false; fi
+ DEBUG [462baf04] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [0ba92ec1] Running /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214210500 by romain" >> /home/revisions.log as root@46.101.23.88
+ DEBUG [0ba92ec1] Command: cd /home/releases && /usr/bin/env echo "Branch master (at 1f24a6f791be73db1f1f8c8ce66240ae47057a33) deployed as release 20170214210500 by romain" >> /home/revisions.log
+  INFO [0ba92ec1] Finished in 0.124 seconds with exit status 0 (successful).

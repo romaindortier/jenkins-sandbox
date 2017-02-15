@@ -47,15 +47,15 @@ services:
 
 
 # ### Webserver Container ###########################
-#     webserver:
-#         container_name: webserver
-#         build:
-#             context: ./dockerised/nginx
-#             dockerfile: Dockerfile
-#         ports:
-#            - "80:80"
-#         volumes:
-#            - "./app:/usr/share/nginx/html"
+     webserver:
+         container_name: webserver
+         build:
+             context: ./dockerised/nginx
+             dockerfile: Dockerfile
+         ports:
+            - "80:80"
+         volumes:
+            - "./app:/usr/share/nginx/html"
 
 ### PHP-FPM Container #######################################
 
