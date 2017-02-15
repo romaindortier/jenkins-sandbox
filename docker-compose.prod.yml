@@ -45,18 +45,6 @@ services:
            - "2222:22"
         tty: true
 
-
-### Webserver Container ###########################
-    webserver:
-        container_name: webserver
-        build:
-            context: ./dockerised/nginx
-            dockerfile: Dockerfile
-        ports:
-           - "80:80"
-        volumes:
-           - "./home/current/:/usr/share/nginx/html"
-
 ### PHP-FPM Container #######################################
 
     php-fpm:
@@ -164,32 +152,6 @@ services:
             - "27017:27017"
         volumes:
             - ./home/current/mongo:/data/db
-
-### Redis Container #########################################
-
-    redis:
-        container_name: redis
-        build: ./dockerised/redis
-        volumes:
-            - ./home/current/redis:/data
-        ports:
-            - "6379:6379"
-
-### RabbitMQ Container ######################################
-
-    rabbitmq:
-        container_name: rabbitmq
-        build: ./dockerised/rabbitmq
-        ports:
-            - "5672:5672"
-            - "15671:15671"
-            - "8080:15672"
-        privileged: true
-        environment:
-            RABBITMQ_DEFAULT_USER: guest
-            RABBITMQ_DEFAULT_PASS: guest
-        links:
-            - php-fpm
 
 ### phpMyAdmin Container ####################################
     phpmyadmin:
