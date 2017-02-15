@@ -55,7 +55,7 @@ services:
         ports:
            - "80:80"
         volumes:
-           - "./home/current/:/usr/share/nginx/html"
+            - ./home/current/:/usr/share/nginx/html
             - ./dockerised/nginx/sites/:/etc/nginx/sites-available
 
 ### PHP-FPM Container #######################################
