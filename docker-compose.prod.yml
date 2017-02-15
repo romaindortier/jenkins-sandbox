@@ -45,6 +45,19 @@ services:
            - "2222:22"
         tty: true
 
+
+### Webserver Container ###########################
+    webserver:
+        container_name: webserver
+        build:
+            context: ./dockerised/nginx
+            dockerfile: Dockerfile
+        ports:
+           - "80:80"
+        volumes:
+           - "./home/current/:/usr/share/nginx/html"
+            - ./dockerised/nginx/sites/:/etc/nginx/sites-available
+
 ### PHP-FPM Container #######################################
 
     php-fpm:
